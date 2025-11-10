@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: Junit.observer.InventorySubjectTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.875 s <<< FAILURE! -- in Junit.observer.InventorySubjectTest
+Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow -- Time elapsed: 1.863 s <<< FAILURE!
+Wanted but not invoked:
+farmaObserver.update("Paracetamol", 3);
+-> at Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow(InventorySubjectTest.java:25)
+Actually, there were zero interactions with this mock.
+
+	at Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow(InventorySubjectTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

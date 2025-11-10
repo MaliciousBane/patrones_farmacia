@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FacadeConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.facade.view</a> &gt; <span class="el_source">FacadeConsole.java</span></div><h1>FacadeConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.facade.view;
+
+import patrones_farmacia.factoryMethod.model.*;
+import patrones_farmacia.factoryMethod.controller.FCreator;
+import patrones_farmacia.facade.controller.*;
+import patrones_farmacia.facade.model.Sale;
+import patrones_farmacia.adapter.model.*;
+import java.util.Scanner;
+
+<span class="nc" id="L10">public class FacadeConsole {</span>
+
+    public void run() {
+<span class="nc" id="L13">        try (Scanner sc = new Scanner(System.in)) {</span>
+<span class="nc" id="L14">            System.out.println(&quot;=== FACADE - PROCESO DE VENTA COMPLETO ===&quot;);</span>
+
+<span class="nc" id="L16">            InventSystem invent = new InventSystem();</span>
+<span class="nc" id="L17">            CashMethod cash = new CashMethod(200000);</span>
+<span class="nc" id="L18">            CreditCardMethod card = new CreditCardMethod(&quot;9999-8888&quot;, &quot;Farmacia&quot;, &quot;777&quot;, 500000);</span>
+<span class="nc" id="L19">            EWalletMethod wallet = new EWalletMethod(&quot;WAL-123&quot;, 300000);</span>
+<span class="nc" id="L20">            AdapterPayMethod adapter = new AdapterPayMethod(cash, card, wallet);</span>
+<span class="nc" id="L21">            PaySystem paySystem = new PaySystem(adapter);</span>
+<span class="nc" id="L22">            ReceiptSystem receiptSystem = new ReceiptSystem();</span>
+
+<span class="nc" id="L24">            FacadeSale facade = new FacadeSale(invent, paySystem, receiptSystem);</span>
+
+<span class="nc" id="L26">            FCreator creator = new FCreator();</span>
+<span class="nc" id="L27">            Medicine m1 = creator.createMedicine(FCreator.Type.GENERIC, &quot;Paracetamol&quot;, &quot;GenFarma&quot;, 3500);</span>
+<span class="nc" id="L28">            Medicine m2 = creator.createMedicine(FCreator.Type.BRAND, &quot;Dolex Forte&quot;, &quot;GSK&quot;, 6200);</span>
+<span class="nc" id="L29">            invent.addToStock(m1);</span>
+<span class="nc" id="L30">            invent.addToStock(m2);</span>
+
+<span class="nc" id="L32">            System.out.print(&quot;Nombre del cliente: &quot;);</span>
+<span class="nc" id="L33">            String client = sc.nextLine();</span>
+<span class="nc" id="L34">            Sale sale = new Sale(&quot;001&quot;, client);</span>
+
+<span class="nc" id="L36">            sale.addMedicine(m1);</span>
+<span class="nc" id="L37">            sale.addMedicine(m2);</span>
+
+<span class="nc" id="L39">            System.out.println(&quot;\nSeleccione método de pago (CASH / CREDIT / EWALLET): &quot;);</span>
+<span class="nc" id="L40">            String mode = sc.nextLine();</span>
+
+<span class="nc" id="L42">            facade.doSale(sale, mode);</span>
+        }
+<span class="nc" id="L44">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L47">        new FacadeConsole().run();</span>
+<span class="nc" id="L48">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DecoratorConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.decorator.view</a> &gt; <span class="el_source">DecoratorConsole.java</span></div><h1>DecoratorConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.decorator.view;
+
+import patrones_farmacia.decorator.model.*;
+import java.util.Scanner;
+
+<span class="nc" id="L6">public class DecoratorConsole {</span>
+
+    public void run() {
+<span class="nc" id="L9">        try (Scanner sc = new Scanner(System.in)) {</span>
+<span class="nc" id="L10">            System.out.println(&quot;\n=== DECORATOR - APLICAR DESCUENTOS E IMPUESTOS ===&quot;);</span>
+<span class="nc" id="L11">            System.out.print(&quot;Nombre del producto: &quot;);</span>
+<span class="nc" id="L12">            String name = sc.nextLine();</span>
+<span class="nc" id="L13">            System.out.print(&quot;Precio base: &quot;);</span>
+<span class="nc" id="L14">            double price = sc.nextDouble(); sc.nextLine();</span>
+
+<span class="nc" id="L16">            Product product = new BaseProduct(name, price);</span>
+<span class="nc" id="L17">            System.out.print(&quot;¿Aplicar descuento (%): &quot;);</span>
+<span class="nc" id="L18">            double desc = sc.nextDouble(); sc.nextLine();</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">            if (desc &gt; 0) product = new DiscountDecorator(product, desc);</span>
+
+<span class="nc" id="L21">            System.out.print(&quot;¿Aplicar IVA (%): &quot;);</span>
+<span class="nc" id="L22">            double iva = sc.nextDouble(); sc.nextLine();</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">            if (iva &gt; 0) product = new TaxDecorator(product, iva);</span>
+
+<span class="nc" id="L25">            System.out.println(&quot;\nProducto final: &quot; + product.getDescription());</span>
+<span class="nc" id="L26">            System.out.println(&quot;Precio final: $&quot; + product.getPrice());</span>
+        }
+<span class="nc" id="L28">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L31">        new DecoratorConsole().run();</span>
+<span class="nc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

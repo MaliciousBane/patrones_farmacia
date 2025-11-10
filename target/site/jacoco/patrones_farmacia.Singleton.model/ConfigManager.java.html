@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConfigManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.Singleton.model</a> &gt; <span class="el_source">ConfigManager.java</span></div><h1>ConfigManager.java</h1><pre class="source lang-java linenums">package patrones_farmacia.Singleton.model;
+
+public class ConfigManager {
+
+    private static ConfigManager instance;
+
+    private String pharmacyName;
+    private String environment;
+    private String databaseURL;
+    private boolean testMode;
+
+<span class="fc" id="L12">    private ConfigManager() {</span>
+<span class="fc" id="L13">        this.pharmacyName = &quot;Farmacia SaludTotal&quot;;</span>
+<span class="fc" id="L14">        this.environment = &quot;desarrollo&quot;;</span>
+<span class="fc" id="L15">        this.databaseURL = &quot;jdbc:mysql://localhost:3306/farmacia_db&quot;;</span>
+<span class="fc" id="L16">        this.testMode = true;</span>
+<span class="fc" id="L17">    }</span>
+
+    public static ConfigManager getInstance() {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (instance == null) {</span>
+<span class="fc" id="L21">            instance = new ConfigManager();</span>
+        }
+<span class="fc" id="L23">        return instance;</span>
+    }
+
+    public String getPharmacyName() {
+<span class="fc" id="L27">        return pharmacyName;</span>
+    }
+
+    public void setPharmacyName(String pharmacyName) {
+<span class="pc bpc" id="L31" title="2 of 4 branches missed.">        if (pharmacyName != null &amp;&amp; !pharmacyName.isEmpty()) {</span>
+<span class="fc" id="L32">            this.pharmacyName = pharmacyName;</span>
+        }
+<span class="fc" id="L34">    }</span>
+
+    public String getEnvironment() {
+<span class="fc" id="L37">        return environment;</span>
+    }
+
+    public void setEnvironment(String environment) {
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (environment.equalsIgnoreCase(&quot;producción&quot;) || </span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">            environment.equalsIgnoreCase(&quot;desarrollo&quot;)) {</span>
+<span class="fc" id="L43">            this.environment = environment.toLowerCase();</span>
+        } else {
+<span class="nc" id="L45">            System.out.println(&quot;Ambiente no válido. Use 'producción' o 'desarrollo'.&quot;);</span>
+        }
+<span class="fc" id="L47">    }</span>
+
+    public String getDatabaseURL() {
+<span class="fc" id="L50">        return databaseURL;</span>
+    }
+
+    public void setDatabaseURL(String databaseURL) {
+<span class="pc bpc" id="L54" title="2 of 4 branches missed.">        if (databaseURL != null &amp;&amp; databaseURL.startsWith(&quot;jdbc:&quot;)) {</span>
+<span class="fc" id="L55">            this.databaseURL = databaseURL;</span>
+        }
+<span class="fc" id="L57">    }</span>
+
+    public boolean isTestMode() {
+<span class="fc" id="L60">        return testMode;</span>
+    }
+
+    public void setTestMode(boolean testMode) {
+<span class="fc" id="L64">        this.testMode = testMode;</span>
+<span class="fc" id="L65">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L69">        return &quot;&quot;&quot;</span>
+               === CONFIGURACIÓN SISTEMA FARMACIA ===
+               Farmacia: %s
+               Ambiente: %s
+               Base de datos: %s
+               Modo prueba: %s
+<span class="nc" id="L75">               &quot;&quot;&quot;.formatted(pharmacyName, environment, databaseURL, testMode);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FacadeSale.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.facade.controller</a> &gt; <span class="el_source">FacadeSale.java</span></div><h1>FacadeSale.java</h1><pre class="source lang-java linenums">package patrones_farmacia.facade.controller;
+
+import patrones_farmacia.facade.model.Sale;
+import patrones_farmacia.factoryMethod.model.Medicine;
+import java.util.List;
+
+/**
+ * Fachada: orquesta el proceso completo de venta.
+ */
+public class FacadeSale {
+
+    private InventSystem invent;
+    private PaySystem pay;
+    private ReceiptSystem receipt;
+
+<span class="fc" id="L16">    public FacadeSale(InventSystem invent, PaySystem pay, ReceiptSystem receipt) {</span>
+<span class="fc" id="L17">        this.invent = invent;</span>
+<span class="fc" id="L18">        this.pay = pay;</span>
+<span class="fc" id="L19">        this.receipt = receipt;</span>
+<span class="fc" id="L20">    }</span>
+
+    public boolean doSale(Sale sale, String paymentMode) {
+<span class="fc" id="L23">        System.out.println(&quot;\nProcesando venta #&quot; + sale.getId());</span>
+
+<span class="fc" id="L25">        List&lt;Medicine&gt; items = sale.getItems();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Medicine med : items) {</span>
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">            if (!invent.verifyStock(med)) {</span>
+<span class="nc" id="L28">                System.out.println(&quot;El producto &quot; + med.getName() + &quot; no está disponible.&quot;);</span>
+<span class="nc" id="L29">                return false;</span>
+            }
+<span class="fc" id="L31">        }</span>
+
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if (pay.processPayment(sale.getTotal(), paymentMode)) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (Medicine med : items) {</span>
+<span class="fc" id="L35">                invent.removeFromStock(med);</span>
+<span class="fc" id="L36">            }</span>
+<span class="fc" id="L37">            receipt.generateReceipt(sale);</span>
+<span class="fc" id="L38">            System.out.println(&quot;Venta completada con éxito.&quot;);</span>
+<span class="fc" id="L39">            return true;</span>
+        } else {
+<span class="nc" id="L41">            System.out.println(&quot;Error en el pago, venta cancelada.&quot;);</span>
+<span class="nc" id="L42">            return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

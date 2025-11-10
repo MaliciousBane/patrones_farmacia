@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DecoratorController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.decorator.controller</a> &gt; <span class="el_source">DecoratorController.java</span></div><h1>DecoratorController.java</h1><pre class="source lang-java linenums">package patrones_farmacia.decorator.controller;
+
+import patrones_farmacia.decorator.model.Product;
+import patrones_farmacia.decorator.model.BaseProduct;
+import patrones_farmacia.decorator.model.DiscountDecorator;
+import patrones_farmacia.decorator.model.TaxDecorator;
+
+<span class="fc" id="L8">public class DecoratorController {</span>
+
+    public Product createBaseProduct(String name, double price) {
+<span class="fc" id="L11">        validateName(name);</span>
+<span class="fc" id="L12">        validatePrice(price);</span>
+<span class="fc" id="L13">        return new BaseProduct(name, price);</span>
+    }
+
+    public Product applyDiscount(Product product, double discountPercent) {
+<span class="pc bpc" id="L17" title="1 of 2 branches missed.">        if (product == null) throw new IllegalArgumentException(&quot;Producto no puede ser null.&quot;);</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if (discountPercent &lt;= 0.0) return product; // nada que aplicar</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if (discountPercent &gt;= 100.0) discountPercent = 100.0; // tope</span>
+<span class="fc" id="L20">        return new DiscountDecorator(product, discountPercent);</span>
+    }
+
+    public Product applyTax(Product product, double taxPercent) {
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (product == null) throw new IllegalArgumentException(&quot;Producto no puede ser null.&quot;);</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if (taxPercent &lt;= 0.0) return product;</span>
+<span class="fc" id="L26">        return new TaxDecorator(product, taxPercent);</span>
+    }
+
+    public Product applyDiscountThenTax(Product product, double discountPercent, double taxPercent) {
+<span class="fc" id="L30">        Product afterDiscount = applyDiscount(product, discountPercent);</span>
+<span class="fc" id="L31">        return applyTax(afterDiscount, taxPercent);</span>
+    }
+
+    public double calculateFinalPrice(Product product) {
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if (product == null) throw new IllegalArgumentException(&quot;Producto no puede ser null.&quot;);</span>
+<span class="fc" id="L36">        double price = product.getPrice();</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (price &lt; 0) throw new IllegalStateException(&quot;Precio calculado negativo.&quot;);</span>
+<span class="fc" id="L38">        return price;</span>
+    }
+
+    public String describeProduct(Product product) {
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (product == null) return &quot;Producto no definido&quot;;</span>
+<span class="fc" id="L43">        return product.getDescription() + &quot; | Precio final: $&quot; + String.format(&quot;%.2f&quot;, product.getPrice());</span>
+    }
+
+    private void validateName(String name) {
+<span class="pc bpc" id="L47" title="2 of 4 branches missed.">        if (name == null || name.trim().isEmpty()) throw new IllegalArgumentException(&quot;El nombre es obligatorio.&quot;);</span>
+<span class="fc" id="L48">    }</span>
+
+    private void validatePrice(double price) {
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (price &lt; 0.0) throw new IllegalArgumentException(&quot;El precio no puede ser negativo.&quot;);</span>
+<span class="fc" id="L52">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

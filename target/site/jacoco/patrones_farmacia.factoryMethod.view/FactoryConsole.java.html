@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FactoryConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.factoryMethod.view</a> &gt; <span class="el_source">FactoryConsole.java</span></div><h1>FactoryConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.factoryMethod.view;
+
+import patrones_farmacia.factoryMethod.controller.FCreator;
+import patrones_farmacia.factoryMethod.model.*;
+import java.util.Scanner;
+
+<span class="nc" id="L7">public class FactoryConsole {</span>
+
+<span class="nc" id="L9">    private FCreator creator = new FCreator();</span>
+<span class="nc" id="L10">    private Scanner scanner = new Scanner(System.in);</span>
+
+    public void run() {
+<span class="nc" id="L13">        System.out.println(&quot;=== FACTORY METHOD - CREACIÓN DE MEDICAMENTOS ===&quot;);</span>
+<span class="nc" id="L14">        boolean active = true;</span>
+
+<span class="nc bnc" id="L16" title="All 2 branches missed.">        while (active) {</span>
+<span class="nc" id="L17">            System.out.println(&quot;\n1. Crear Genérico&quot;);</span>
+<span class="nc" id="L18">            System.out.println(&quot;2. Crear de Marca&quot;);</span>
+<span class="nc" id="L19">            System.out.println(&quot;3. Crear Controlado&quot;);</span>
+<span class="nc" id="L20">            System.out.println(&quot;4. Salir&quot;);</span>
+<span class="nc" id="L21">            System.out.print(&quot;Seleccione una opción: &quot;);</span>
+<span class="nc" id="L22">            int op = scanner.nextInt(); scanner.nextLine();</span>
+
+<span class="nc bnc" id="L24" title="All 5 branches missed.">            switch (op) {</span>
+<span class="nc" id="L25">                case 1 -&gt; createGeneric();</span>
+<span class="nc" id="L26">                case 2 -&gt; createBrand();</span>
+<span class="nc" id="L27">                case 3 -&gt; createControlled();</span>
+<span class="nc" id="L28">                case 4 -&gt; active = false;</span>
+<span class="nc" id="L29">                default -&gt; System.out.println(&quot;Opción inválida&quot;);</span>
+            }
+<span class="nc" id="L31">        }</span>
+<span class="nc" id="L32">    }</span>
+
+    private void createGeneric() {
+<span class="nc" id="L35">        System.out.print(&quot;Nombre: &quot;);</span>
+<span class="nc" id="L36">        String name = scanner.nextLine();</span>
+<span class="nc" id="L37">        System.out.print(&quot;Laboratorio: &quot;);</span>
+<span class="nc" id="L38">        String lab = scanner.nextLine();</span>
+<span class="nc" id="L39">        System.out.print(&quot;Precio: &quot;);</span>
+<span class="nc" id="L40">        double price = scanner.nextDouble();</span>
+<span class="nc" id="L41">        scanner.nextLine();</span>
+
+<span class="nc" id="L43">        Medicine m = creator.createMedicine(FCreator.Type.GENERIC, name, lab, price);</span>
+<span class="nc" id="L44">        System.out.println(&quot;Creado: &quot; + m);</span>
+<span class="nc" id="L45">    }</span>
+
+    private void createBrand() {
+<span class="nc" id="L48">        System.out.print(&quot;Nombre: &quot;);</span>
+<span class="nc" id="L49">        String name = scanner.nextLine();</span>
+<span class="nc" id="L50">        System.out.print(&quot;Marca: &quot;);</span>
+<span class="nc" id="L51">        String brand = scanner.nextLine();</span>
+<span class="nc" id="L52">        System.out.print(&quot;Precio: &quot;);</span>
+<span class="nc" id="L53">        double price = scanner.nextDouble();</span>
+<span class="nc" id="L54">        scanner.nextLine();</span>
+
+<span class="nc" id="L56">        Medicine m = creator.createMedicine(FCreator.Type.BRAND, name, brand, price);</span>
+<span class="nc" id="L57">        System.out.println(&quot;Creado: &quot; + m);</span>
+<span class="nc" id="L58">    }</span>
+
+    private void createControlled() {
+<span class="nc" id="L61">        System.out.print(&quot;Nombre: &quot;);</span>
+<span class="nc" id="L62">        String name = scanner.nextLine();</span>
+<span class="nc" id="L63">        System.out.print(&quot;Código INVIMA: &quot;);</span>
+<span class="nc" id="L64">        String code = scanner.nextLine();</span>
+<span class="nc" id="L65">        System.out.print(&quot;Precio: &quot;);</span>
+<span class="nc" id="L66">        double price = scanner.nextDouble();</span>
+<span class="nc" id="L67">        scanner.nextLine();</span>
+
+<span class="nc" id="L69">        Medicine m = creator.createMedicine(FCreator.Type.CONTROLLED, name, code, price);</span>
+<span class="nc" id="L70">        System.out.println(&quot;Creado: &quot; + m);</span>
+<span class="nc" id="L71">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L74">        new FactoryConsole().run();</span>
+<span class="nc" id="L75">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

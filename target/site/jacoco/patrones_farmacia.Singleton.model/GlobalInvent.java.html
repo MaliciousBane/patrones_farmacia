@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalInvent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.Singleton.model</a> &gt; <span class="el_source">GlobalInvent.java</span></div><h1>GlobalInvent.java</h1><pre class="source lang-java linenums">package patrones_farmacia.Singleton.model;
+
+import patrones_farmacia.factoryMethod.model.Medicine;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GlobalInvent {
+
+    private static GlobalInvent instance;
+    private List&lt;Medicine&gt; medicines;
+
+<span class="nc" id="L12">    private GlobalInvent() {</span>
+<span class="nc" id="L13">        medicines = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L14">    }</span>
+
+    public static synchronized GlobalInvent getInstance() {
+<span class="nc bnc" id="L17" title="All 2 branches missed.">        if (instance == null) {</span>
+<span class="nc" id="L18">            instance = new GlobalInvent();</span>
+        }
+<span class="nc" id="L20">        return instance;</span>
+    }
+
+    public void addMedicine(Medicine m) {
+<span class="nc" id="L24">        medicines.add(m);</span>
+<span class="nc" id="L25">    }</span>
+
+    public boolean removeMedicine(String name) {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        for (int i = 0; i &lt; medicines.size(); i++) {</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">            if (medicines.get(i).getName().equalsIgnoreCase(name)) {</span>
+<span class="nc" id="L30">                medicines.remove(i);</span>
+<span class="nc" id="L31">                return true;</span>
+            }
+        }
+<span class="nc" id="L34">        return false;</span>
+    }
+
+    public Medicine findMedicine(String name) {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (Medicine m : medicines) {</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">            if (m.getName().equalsIgnoreCase(name)) {</span>
+<span class="nc" id="L40">                return m;</span>
+            }
+<span class="nc" id="L42">        }</span>
+<span class="nc" id="L43">        return null;</span>
+    }
+
+    public List&lt;Medicine&gt; getAllMedicines() {
+<span class="nc" id="L47">        return medicines;</span>
+    }
+
+    public void showInventory() {
+<span class="nc" id="L51">        System.out.println(&quot;\n=== INVENTARIO GLOBAL ===&quot;);</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (medicines.isEmpty()) {</span>
+<span class="nc" id="L53">            System.out.println(&quot;Inventario vacío.&quot;);</span>
+        } else {
+<span class="nc bnc" id="L55" title="All 2 branches missed.">            for (Medicine m : medicines) {</span>
+<span class="nc" id="L56">                System.out.println(&quot;- &quot; + m);</span>
+<span class="nc" id="L57">            }</span>
+        }
+<span class="nc" id="L59">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StateController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.state.controller</a> &gt; <span class="el_source">StateController.java</span></div><h1>StateController.java</h1><pre class="source lang-java linenums">package patrones_farmacia.state.controller;
+
+import patrones_farmacia.state.model.Order;
+import patrones_farmacia.state.model.StateOrder;
+import patrones_farmacia.state.model.PendientState;
+import java.util.ArrayList;
+import java.util.List;
+
+public class StateController {
+
+    private List&lt;Order&gt; orders;
+
+<span class="nc" id="L13">    public StateController() {</span>
+<span class="nc" id="L14">        this.orders = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L15">    }</span>
+
+    public Order createOrder(String id) {
+<span class="nc bnc" id="L18" title="All 4 branches missed.">        if (id == null || id.trim().isEmpty()) throw new IllegalArgumentException(&quot;ID inválido&quot;);</span>
+<span class="nc" id="L19">        Order order = new Order(id);</span>
+<span class="nc" id="L20">        orders.add(order);</span>
+<span class="nc" id="L21">        System.out.println(&quot;Pedido creado: &quot; + id + &quot; (estado: &quot; + order.getStateName() + &quot;)&quot;);</span>
+<span class="nc" id="L22">        return order;</span>
+    }
+
+    public boolean addProductToOrder(String orderId, String productName) {
+<span class="nc" id="L26">        Order ord = findOrder(orderId);</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if (ord == null) return false;</span>
+<span class="nc" id="L28">        ord.addProduct(productName);</span>
+<span class="nc" id="L29">        System.out.println(&quot;Producto '&quot; + productName + &quot;' añadido al pedido &quot; + orderId);</span>
+<span class="nc" id="L30">        return true;</span>
+    }
+
+    public boolean processOrder(String orderId) {
+<span class="nc" id="L34">        Order ord = findOrder(orderId);</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (ord == null) return false;</span>
+<span class="nc" id="L36">        System.out.println(&quot;Procesando pedido &quot; + orderId + &quot; (estado actual: &quot; + ord.getStateName() + &quot;)&quot;);</span>
+<span class="nc" id="L37">        ord.process(); </span>
+<span class="nc" id="L38">        System.out.println(&quot;Nuevo estado: &quot; + ord.getStateName());</span>
+<span class="nc" id="L39">        return true;</span>
+    }
+
+    public boolean setOrderState(String orderId, StateOrder state) {
+<span class="nc" id="L43">        Order ord = findOrder(orderId);</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (ord == null) return false;</span>
+<span class="nc" id="L45">        ord.setState(state);</span>
+<span class="nc" id="L46">        System.out.println(&quot;Estado forzado de &quot; + orderId + &quot; a &quot; + ord.getStateName());</span>
+<span class="nc" id="L47">        return true;</span>
+    }
+
+    public List&lt;String&gt; listOrdersSummary() {
+<span class="nc" id="L51">        List&lt;String&gt; summary = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for (Order o : orders) {</span>
+<span class="nc" id="L53">            summary.add(&quot;ID:&quot; + o.getId() + &quot; | Estado:&quot; + o.getStateName());</span>
+<span class="nc" id="L54">        }</span>
+<span class="nc" id="L55">        return summary;</span>
+    }
+
+    private Order findOrder(String orderId) {
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        for (Order o : orders) {</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            if (o.getId().equalsIgnoreCase(orderId)) return o;</span>
+<span class="nc" id="L61">        }</span>
+<span class="nc" id="L62">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

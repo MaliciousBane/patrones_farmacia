@@ -23,7 +23,19 @@ public class Order {
         state.manage(this);
     }
 
-    public void setState(StateOrder s) { this.state = s; }
-    public String getStateName() { return state.getNameState(); }
-    public String getId() { return id; }
+    public void setState(StateOrder s) { 
+        this.state = s; 
+    }
+    
+    public String getStateName() { 
+        return state.getNameState(); 
+    }
+    
+    public String getId() { 
+        return id; 
+    }
+    
+    public List<String> getProducts() {
+        return new ArrayList<>(products);
+    }
 }

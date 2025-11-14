@@ -1,11 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: Integration.chainOfResponsability.ChainIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.010 s <<< FAILURE! -- in Integration.chainOfResponsability.ChainIntegrationTest
-Integration.chainOfResponsability.ChainIntegrationTest.testFullValidationChain -- Time elapsed: 0.005 s <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.inventory" is null
-	at patrones_farmacia.chainOfResponsability.controller.StockValidationHandler.handle(StockValidationHandler.java:21)
-	at Integration.chainOfResponsability.ChainIntegrationTest.testFullValidationChain(ChainIntegrationTest.java:33)
+Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! -- in Integration.chainOfResponsability.ChainIntegrationTest
+Integration.chainOfResponsability.ChainIntegrationTest.largeBasketWithMixedPricesProcessesWithCredit -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0.0> but was: <1000.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Integration.chainOfResponsability.ChainIntegrationTest.largeBasketWithMixedPricesProcessesWithCredit(ChainIntegrationTest.java:266)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)

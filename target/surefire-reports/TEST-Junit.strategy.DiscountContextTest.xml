@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.strategy.DiscountContextTest" time="0.03" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.strategy.DiscountContextTest" time="0.124" tests="74" errors="0" skipped="0" failures="6">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,12 +58,156 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="debeAplicarDescuentoPorcentualAlto" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
-  <testcase name="debeAplicarDescuentoPorcentual" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="debeManejarDescuentosConValoresDecimales" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="debeCambiarEstrategiaDescuentoDinamicamente" classname="Junit.strategy.DiscountContextTest" time="0.003"/>
-  <testcase name="descuentoVIPNoDebeAplicarseSinAlcanzarUmbral" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="debeAplicarDescuentoVIPCuandoCumpleUmbral" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="descuentoVIPConUmbralExactoDebeAplicarse" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="noDebeAplicarDescuentoConEstrategiaNoDiscount" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="combinarVIPyPercentage" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="noDiscountMantieneTotal" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="percentageNegativeIsIncrease" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="applyConEstrategiaNula" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="vipConPorcentajeCero" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="vipDescriptionContainsThreshold" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="vipConUmbralBajo" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="noDiscountCalculateReturnsSameTotal" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipThresholdFloating" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipRate0AlcanzandoUmbral" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipAplicaSobreUmbral" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="cambiarEstrategiaDinamicamente" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentageOnePercent" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="noDiscountWithAnyPositiveValue" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="noDiscountConValoresExtremos" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="strategyConsoleMainExecutes" classname="Junit.strategy.DiscountContextTest" time="0.007"/>
+  <testcase name="vipExactlyAtThresholdApplies" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="multipleStrategySwitches" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="concurrentContextChangesAndApplies" classname="Junit.strategy.DiscountContextTest" time="0.003"/>
+  <testcase name="contextCanChangeStrategyMultipleTimes" classname="Junit.strategy.DiscountContextTest" time="0.003">
+    <failure message="expected: &lt;95.0&gt; but was: &lt;100.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <95.0> but was: <100.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.contextCanChangeStrategyMultipleTimes(DiscountContextTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="vipNegativeRateIncreases" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="vipWithMaxThreshold" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="precisionResultadosDecimales" classname="Junit.strategy.DiscountContextTest" time="0.002">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Junit.strategy.DiscountContextTest.precisionResultadosDecimales(DiscountContextTest.java:187)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="percentageTiny" classname="Junit.strategy.DiscountContextTest" time="0.002">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Junit.strategy.DiscountContextTest.percentageTiny(DiscountContextTest.java:429)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="describeVIPIncluyeUmbral" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipJustAboveThresholdApplies" classname="Junit.strategy.DiscountContextTest" time="0.002">
+    <failure message="expected: &lt;500.5&gt; but was: &lt;500.005&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <500.5> but was: <500.005>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.vipJustAboveThresholdApplies(DiscountContextTest.java:344)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="vipDescriptionContainsVIP" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="aplica10Porciento" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="vipThresholdYPorcentajeCien" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipDescriptionNoNewlines" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="contextDescribeImmutableBetweenApplies" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="contextDescribeAfterSetStrategy" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipRateFloating" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipAplicaEnUmbralExacto" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="thousandStrategyChanges" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="porcentajeDecimal" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="describePercentage" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipRate100AlcanzandoUmbral" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="percentageMostly" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="percentageCalculateFormula" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="noDiscountSingletonPotential" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentageDescriptionNoNewlines" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentageConstructorStoresValue" classname="Junit.strategy.DiscountContextTest" time="0.002">
+    <failure message="expected: &lt;33.33&gt; but was: &lt;66.67&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <33.33> but was: <66.67>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.percentageConstructorStoresValue(DiscountContextTest.java:287)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="contextSetStrategyAndApplySequence" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="changeStrategyFromNotNullToNull" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipPreservesPrecisionThreshold" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipNoAplicaSiNoAlcanza" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="vipBelowThresholdNoDiscount" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="noDiscountDescriptionExact" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentageHalfPercent" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="porcentajeCero" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="porcentajeCien" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentageTwoHundred" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="describeConNulo" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="vipJustBelowThresholdNoApply" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="aplicarSobreCero" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="hundredDifferentApplications" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="multipleAppliesSameStrategyIdempotent" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="porcentajeMayorCienDevuelveNegativo" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="applyWithNegativeTotals" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="multiplePercentageApplications" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="multipleCalculationsConMismaEstrategia" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipDescriptionContainsDollarSign" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="changeStrategyFromNullToNotNull" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="percentageWithLargeValues" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="percentageDescriptionFormat" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipWithVeryLargeValues" classname="Junit.strategy.DiscountContextTest" time="0.0"/>
+  <testcase name="repeatedApplyVipIsStateless" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipWithNegativeThreshold" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="porcentajeNegativoIncrementaTotal" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipConstructorStoresValues" classname="Junit.strategy.DiscountContextTest" time="0.004">
+    <failure message="expected: &lt;15.0&gt; but was: &lt;4250.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <15.0> but was: <4250.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.vipConstructorStoresValues(DiscountContextTest.java:323)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="percentageWithDoubleMaxValue" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="percentagePreservesPrecision" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="vipWithZeroThresholdAppliesAlways" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
 </testsuite>

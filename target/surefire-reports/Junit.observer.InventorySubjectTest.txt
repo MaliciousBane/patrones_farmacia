@@ -1,50 +1,39 @@
 -------------------------------------------------------------------------------
 Test set: Junit.observer.InventorySubjectTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 3.422 s <<< FAILURE! -- in Junit.observer.InventorySubjectTest
-Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo -- Time elapsed: 3.375 s <<< FAILURE!
-Wanted but not invoked:
-farmaObserver.update("Paracetamol", 3);
--> at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo(InventorySubjectTest.java:32)
-Actually, there were zero interactions with this mock.
+Tests run: 41, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 2.759 s <<< FAILURE! -- in Junit.observer.InventorySubjectTest
+Junit.observer.InventorySubjectTest.setMinThresholdExtremos -- Time elapsed: 0.026 s <<< FAILURE!
+org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
-	at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo(InventorySubjectTest.java:32)
+farmaObserver.update("Ex2", <any integer>);
+Never wanted here:
+-> at Junit.observer.InventorySubjectTest.setMinThresholdExtremos(InventorySubjectTest.java:250)
+But invoked here:
+-> at patrones_farmacia.observer.model.InventorySubject.notifyObservers(InventorySubject.java:31) with arguments: [Ex2, 499]
+
+	at Junit.observer.InventorySubjectTest.setMinThresholdExtremos(InventorySubjectTest.java:250)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente -- Time elapsed: 0.011 s <<< FAILURE!
-Wanted but not invoked:
-farmaObserver.update(
-    "Amoxicilina",
-    <any integer>
-);
--> at Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente(InventorySubjectTest.java:62)
-Actually, there were zero interactions with this mock.
-
-	at Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente(InventorySubjectTest.java:62)
+Junit.observer.InventorySubjectTest.addObserverNullIsIgnored -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "patrones_farmacia.observer.model.FarmaObserver.update(String, int)" because "obs" is null
+	at patrones_farmacia.observer.model.InventorySubject.notifyObservers(InventorySubject.java:31)
+	at patrones_farmacia.observer.model.InventorySubject.reduceStock(InventorySubject.java:48)
+	at Junit.observer.InventorySubjectTest.addObserverNullIsIgnored(InventorySubjectTest.java:380)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral -- Time elapsed: 0.005 s <<< FAILURE!
-Wanted but not invoked:
-farmaObserver.update("Ibuprofeno", 5);
--> at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral(InventorySubjectTest.java:51)
-Actually, there were zero interactions with this mock.
-
-	at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral(InventorySubjectTest.java:51)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
-Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores -- Time elapsed: 0.005 s <<< FAILURE!
-Wanted but not invoked:
-farmaObserver.update("Aspirina", 3);
--> at Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores(InventorySubjectTest.java:74)
-Actually, there were zero interactions with this mock.
-
-	at Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores(InventorySubjectTest.java:74)
+Junit.observer.InventorySubjectTest.negativeIncreaseIsIgnored -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <5> but was: <2>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
+	at Junit.observer.InventorySubjectTest.negativeIncreaseIsIgnored(InventorySubjectTest.java:372)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)

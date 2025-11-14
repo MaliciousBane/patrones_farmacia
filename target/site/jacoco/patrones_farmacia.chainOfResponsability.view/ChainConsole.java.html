@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChainConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.chainOfResponsability.view</a> &gt; <span class="el_source">ChainConsole.java</span></div><h1>ChainConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.chainOfResponsability.view;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChainConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patrones_farmacia</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.chainOfResponsability.view</a> &gt; <span class="el_source">ChainConsole.java</span></div><h1>ChainConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.chainOfResponsability.view;
 
 import patrones_farmacia.chainOfResponsability.controller.*;
 import patrones_farmacia.adapter.model.*;
@@ -7,34 +7,34 @@ import patrones_farmacia.factoryMethod.controller.FCreator;
 import patrones_farmacia.factoryMethod.model.*;
 import java.util.*;
 
-<span class="nc" id="L10">public class ChainConsole {</span>
+<span class="fc" id="L10">public class ChainConsole {</span>
 
     public void run() {
-<span class="nc" id="L13">        FCreator creator = new FCreator();</span>
-<span class="nc" id="L14">        Medicine med = creator.createMedicine(FCreator.Type.BRAND, &quot;Aspirina&quot;, &quot;Bayer&quot;, 3000);</span>
-<span class="nc" id="L15">        List&lt;Medicine&gt; inventory = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L16">        inventory.add(med);</span>
+<span class="fc" id="L13">        FCreator creator = new FCreator();</span>
+<span class="fc" id="L14">        Medicine med = creator.createMedicine(FCreator.Type.BRAND, &quot;Aspirina&quot;, &quot;Bayer&quot;, 3000);</span>
+<span class="fc" id="L15">        List&lt;Medicine&gt; inventory = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L16">        inventory.add(med);</span>
 
-<span class="nc" id="L18">        CashMethod cash = new CashMethod(20000);</span>
-<span class="nc" id="L19">        CreditCardMethod card = new CreditCardMethod(&quot;0000&quot;, &quot;Andrés&quot;, &quot;555&quot;, 50000);</span>
-<span class="nc" id="L20">        EWalletMethod wallet = new EWalletMethod(&quot;ACC-1&quot;, 10000);</span>
-<span class="nc" id="L21">        AdapterPayMethod adapter = new AdapterPayMethod(cash, card, wallet);</span>
-<span class="nc" id="L22">        adapter.setMode(&quot;CASH&quot;);</span>
+<span class="fc" id="L18">        CashMethod cash = new CashMethod(20000);</span>
+<span class="fc" id="L19">        CreditCardMethod card = new CreditCardMethod(&quot;0000&quot;, &quot;Andrés&quot;, &quot;555&quot;, 50000);</span>
+<span class="fc" id="L20">        EWalletMethod wallet = new EWalletMethod(&quot;ACC-1&quot;, 10000);</span>
+<span class="fc" id="L21">        AdapterPayMethod adapter = new AdapterPayMethod(cash, card, wallet);</span>
+<span class="fc" id="L22">        adapter.setMode(&quot;CASH&quot;);</span>
 
-<span class="nc" id="L24">        Sale sale = new Sale(&quot;S001&quot;, &quot;Cliente 1&quot;);</span>
-<span class="nc" id="L25">        sale.addMedicine(med);</span>
+<span class="fc" id="L24">        Sale sale = new Sale(&quot;S001&quot;, &quot;Cliente 1&quot;);</span>
+<span class="fc" id="L25">        sale.addMedicine(med);</span>
 
-<span class="nc" id="L27">        StockValidationHandler stock = new StockValidationHandler(inventory);</span>
-<span class="nc" id="L28">        PaymentValidationHandler pay = new PaymentValidationHandler(adapter);</span>
-<span class="nc" id="L29">        FinalizeSaleHandler finalize = new FinalizeSaleHandler();</span>
-<span class="nc" id="L30">        stock.setNext(pay);</span>
-<span class="nc" id="L31">        pay.setNext(finalize);</span>
+<span class="fc" id="L27">        StockValidationHandler stock = new StockValidationHandler(inventory);</span>
+<span class="fc" id="L28">        PaymentValidationHandler pay = new PaymentValidationHandler(adapter);</span>
+<span class="fc" id="L29">        FinalizeSaleHandler finalize = new FinalizeSaleHandler();</span>
+<span class="fc" id="L30">        stock.setNext(pay);</span>
+<span class="fc" id="L31">        pay.setNext(finalize);</span>
 
-<span class="nc" id="L33">        stock.handle(sale);</span>
-<span class="nc" id="L34">    }</span>
+<span class="fc" id="L33">        stock.handle(sale);</span>
+<span class="fc" id="L34">    }</span>
 
     public static void main(String[] args) {
-<span class="nc" id="L37">        new ChainConsole().run();</span>
-<span class="nc" id="L38">    }</span>
+<span class="fc" id="L37">        new ChainConsole().run();</span>
+<span class="fc" id="L38">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

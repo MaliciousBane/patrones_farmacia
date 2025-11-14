@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AdapterPayMethod.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.adapter.model</a> &gt; <span class="el_source">AdapterPayMethod.java</span></div><h1>AdapterPayMethod.java</h1><pre class="source lang-java linenums">package patrones_farmacia.adapter.model;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AdapterPayMethod.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patrones_farmacia</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.adapter.model</a> &gt; <span class="el_source">AdapterPayMethod.java</span></div><h1>AdapterPayMethod.java</h1><pre class="source lang-java linenums">package patrones_farmacia.adapter.model;
 
 public class AdapterPayMethod implements PayMethodInterface {
 
@@ -11,35 +11,42 @@ public class AdapterPayMethod implements PayMethodInterface {
 <span class="fc" id="L11">        this.cash = cash;</span>
 <span class="fc" id="L12">        this.credit = credit;</span>
 <span class="fc" id="L13">        this.wallet = wallet;</span>
-<span class="fc" id="L14">        this.currentMode = &quot;CASH&quot;; </span>
+<span class="fc" id="L14">        this.currentMode = &quot;CASH&quot;;</span>
 <span class="fc" id="L15">    }</span>
 
     public void setMode(String mode) {
-<span class="fc" id="L18">        this.currentMode = mode.toUpperCase();</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        this.currentMode = (mode == null) ? null : mode.toUpperCase();</span>
 <span class="fc" id="L19">    }</span>
 
     @Override
     public boolean pay(double amount) {
-<span class="pc bpc" id="L23" title="1 of 4 branches missed.">        switch (currentMode) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (amount &lt; 0) return false;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (currentMode == null) return false;</span>
+
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        switch (currentMode) {</span>
             case &quot;CASH&quot;:
-<span class="fc" id="L25">                return cash.cashPay(amount);</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">                if (cash == null) return false;</span>
+<span class="fc" id="L29">                return cash.cashPay(amount);</span>
             case &quot;CREDIT&quot;:
-<span class="fc" id="L27">                return credit.makePayment(amount);</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">                if (credit == null) return false;</span>
+<span class="fc" id="L32">                return credit.makePayment(amount);</span>
             case &quot;EWALLET&quot;:
-<span class="fc" id="L29">                return wallet.transferCash(amount);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">                if (wallet == null) return false;</span>
+<span class="fc" id="L35">                return wallet.transferCash(amount);</span>
             default:
-<span class="nc" id="L31">                System.out.println(&quot;Modo de pago no soportado.&quot;);</span>
-<span class="nc" id="L32">                return false;</span>
+<span class="fc" id="L37">                System.out.println(&quot;Modo de pago no soportado.&quot;);</span>
+<span class="fc" id="L38">                return false;</span>
         }
     }
 
     @Override
     public String getName() {
-<span class="pc bpc" id="L38" title="1 of 4 branches missed.">        switch (currentMode) {</span>
-<span class="fc" id="L39">            case &quot;CASH&quot;: return &quot;Efectivo&quot;;</span>
-<span class="fc" id="L40">            case &quot;CREDIT&quot;: return &quot;Tarjeta de Crédito&quot;;</span>
-<span class="fc" id="L41">            case &quot;EWALLET&quot;: return &quot;E-Wallet&quot;;</span>
-<span class="nc" id="L42">            default: return &quot;Desconocido&quot;;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (currentMode == null) return &quot;Desconocido&quot;;</span>
+<span class="fc bfc" id="L45" title="All 4 branches covered.">        switch (currentMode) {</span>
+<span class="fc" id="L46">            case &quot;CASH&quot;: return &quot;Efectivo&quot;;</span>
+<span class="fc" id="L47">            case &quot;CREDIT&quot;: return &quot;Tarjeta de Crédito&quot;;</span>
+<span class="fc" id="L48">            case &quot;EWALLET&quot;: return &quot;E-Wallet&quot;;</span>
+<span class="fc" id="L49">            default: return &quot;Desconocido&quot;;</span>
         }
     }
 }

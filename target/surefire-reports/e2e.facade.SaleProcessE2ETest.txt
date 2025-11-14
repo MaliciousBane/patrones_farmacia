@@ -1,4 +1,220 @@
 -------------------------------------------------------------------------------
 Test set: e2e.facade.SaleProcessE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in e2e.facade.SaleProcessE2ETest
+Tests run: 27, Failures: 0, Errors: 27, Skipped: 0, Time elapsed: 0.132 s <<< FAILURE! -- in e2e.facade.SaleProcessE2ETest
+e2e.facade.SaleProcessE2ETest.testVerifyStockCaseInsensitive -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRejectSaleExceedingCardLimit -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRecoverFromFailedSaleAndProcessNextSuccessfully -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessMultipleSalesSequentially -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRemoveMedicineFromStockAfterSale -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleExactCardLimit -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleWithDifferentPrices -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testPreserveSaleIdAfterProcessing -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessPaymentWithCreditCard -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleWithDuplicateMedicine -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testHandleEmptySale -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testPreserveClientNameAfterProcessing -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleWithExactWalletBalance -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testKeepMedicinesInStockAfterFailedSale -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testMultipleFacadeInstances -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRejectSaleIfPaymentFails -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessPaymentInCash -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testGenerateReceiptAfterSuccessfulSale -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRejectSaleWithUnavailableMedicine -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testVerifyStockBeforeProcessingPayment -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleWithSingleMedicine -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testRejectPaymentWithInvalidMethod -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testCompleteEntireSaleProcessThroughFacade -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testCompleteFlowWithoutErrors -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessPaymentWithEWallet -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testProcessSaleWithMultipleMedicines -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.facade.SaleProcessE2ETest.testPaymentMethodCaseInsensitive -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at e2e.facade.SaleProcessE2ETest.setUp(SaleProcessE2ETest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

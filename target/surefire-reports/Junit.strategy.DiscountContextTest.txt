@@ -1,4 +1,82 @@
 -------------------------------------------------------------------------------
 Test set: Junit.strategy.DiscountContextTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in Junit.strategy.DiscountContextTest
+Tests run: 74, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.124 s <<< FAILURE! -- in Junit.strategy.DiscountContextTest
+Junit.strategy.DiscountContextTest.contextCanChangeStrategyMultipleTimes -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <95.0> but was: <100.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.contextCanChangeStrategyMultipleTimes(DiscountContextTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.strategy.DiscountContextTest.precisionResultadosDecimales -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Junit.strategy.DiscountContextTest.precisionResultadosDecimales(DiscountContextTest.java:187)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.strategy.DiscountContextTest.percentageTiny -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Junit.strategy.DiscountContextTest.percentageTiny(DiscountContextTest.java:429)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.strategy.DiscountContextTest.vipJustAboveThresholdApplies -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <500.5> but was: <500.005>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.vipJustAboveThresholdApplies(DiscountContextTest.java:344)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.strategy.DiscountContextTest.percentageConstructorStoresValue -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <33.33> but was: <66.67>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.percentageConstructorStoresValue(DiscountContextTest.java:287)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.strategy.DiscountContextTest.vipConstructorStoresValues -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <15.0> but was: <4250.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.strategy.DiscountContextTest.vipConstructorStoresValues(DiscountContextTest.java:323)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

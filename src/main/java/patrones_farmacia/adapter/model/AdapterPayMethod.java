@@ -11,21 +11,27 @@ public class AdapterPayMethod implements PayMethodInterface {
         this.cash = cash;
         this.credit = credit;
         this.wallet = wallet;
-        this.currentMode = "CASH"; 
+        this.currentMode = "CASH";
     }
 
     public void setMode(String mode) {
-        this.currentMode = mode.toUpperCase();
+        this.currentMode = (mode == null) ? null : mode.toUpperCase();
     }
 
     @Override
     public boolean pay(double amount) {
+        if (amount < 0) return false;
+        if (currentMode == null) return false;
+
         switch (currentMode) {
             case "CASH":
+                if (cash == null) return false;
                 return cash.cashPay(amount);
             case "CREDIT":
+                if (credit == null) return false;
                 return credit.makePayment(amount);
             case "EWALLET":
+                if (wallet == null) return false;
                 return wallet.transferCash(amount);
             default:
                 System.out.println("Modo de pago no soportado.");
@@ -35,6 +41,7 @@ public class AdapterPayMethod implements PayMethodInterface {
 
     @Override
     public String getName() {
+        if (currentMode == null) return "Desconocido";
         switch (currentMode) {
             case "CASH": return "Efectivo";
             case "CREDIT": return "Tarjeta de Crédito";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.observer.StockNotificationE2ETest" time="0.014" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.observer.StockNotificationE2ETest" time="0.161" tests="35" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,5 +58,114 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="shouldSendAlertsWhenStockReachesThreshold" classname="e2e.observer.StockNotificationE2ETest" time="0.011"/>
+  <testcase name="testAddMultipleObservers" classname="e2e.observer.StockNotificationE2ETest" time="0.035">
+    <system-out><![CDATA[[EMAIL] A admin@farmacia.com: Stock bajo de Ibuprofeno (2 unidades)
+[SMS] +573001001001: quedan 2 unidades de Ibuprofeno
+]]></system-out>
+  </testcase>
+  <testcase name="testChangeThreshold" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testNotifyAtThreshold" classname="e2e.observer.StockNotificationE2ETest" time="0.009">
+    <system-out><![CDATA[Stock actualizado de Producto: 5
+[EMAIL] A admin@farmacia.com: Stock bajo de Producto (5 unidades)
+]]></system-out>
+  </testcase>
+  <testcase name="testGetStock" classname="e2e.observer.StockNotificationE2ETest" time="0.003"/>
+  <testcase name="testAddObserver" classname="e2e.observer.StockNotificationE2ETest" time="0.003">
+    <system-out><![CDATA[[EMAIL] A admin@farmacia.com: Stock bajo de Paracetamol (3 unidades)
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleIncreases" classname="e2e.observer.StockNotificationE2ETest" time="0.004">
+    <system-out><![CDATA[Reposición de Producto a 15 unidades.
+Reposición de Producto a 20 unidades.
+Reposición de Producto a 25 unidades.
+]]></system-out>
+  </testcase>
+  <testcase name="testAddMultipleProducts" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
+  <testcase name="testGetAllProductsFromController" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
+  <testcase name="testCreateInventorySubject" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
+  <testcase name="testRegisterSMSAlert" classname="e2e.observer.StockNotificationE2ETest" time="0.003">
+    <system-out><![CDATA[Stock actualizado de Ibuprofeno: 3
+[SMS] +573001234567: quedan 3 unidades de Ibuprofeno
+]]></system-out>
+  </testcase>
+  <testcase name="testGetStockFromController" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testGetLowStockFromController" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
+  <testcase name="testSpecialNames" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testGetLowStockProducts" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testVeryLowStock" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Stock actualizado de Producto: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testChangeThresholdFromController" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testMultipleInstances" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Stock actualizado de Producto: 4
+Stock actualizado de Producto: 4
+]]></system-out>
+  </testcase>
+  <testcase name="testReduceStock" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Stock actualizado de Paracetamol: 7
+]]></system-out>
+  </testcase>
+  <testcase name="testMaintainProductList" classname="e2e.observer.StockNotificationE2ETest" time="0.003">
+    <system-out><![CDATA[Stock actualizado de Med1: 5
+Reposición de Med2 a 25 unidades.
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateObservers" classname="e2e.observer.StockNotificationE2ETest" time="0.003"/>
+  <testcase name="testDataIntegrity" classname="e2e.observer.StockNotificationE2ETest" time="0.001">
+    <system-out><![CDATA[Stock actualizado de Paracetamol: 80
+Reposición de Paracetamol a 90 unidades.
+Stock actualizado de Paracetamol: 75
+]]></system-out>
+  </testcase>
+  <testcase name="testCompleteFlow" classname="e2e.observer.StockNotificationE2ETest" time="0.001">
+    <system-out><![CDATA[Stock actualizado de Ibuprofeno: 4
+[EMAIL] A admin@farmacia.com: Stock bajo de Ibuprofeno (4 unidades)
+[SMS] +573001001001: quedan 4 unidades de Ibuprofeno
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchCaseInsensitive" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
+  <testcase name="testMultipleReductions" classname="e2e.observer.StockNotificationE2ETest" time="0.004">
+    <system-out><![CDATA[Stock actualizado de Producto: 15
+Stock actualizado de Producto: 10
+Stock actualizado de Producto: 5
+]]></system-out>
+  </testcase>
+  <testcase name="testAddProduct" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testGetStockNonExistent" classname="e2e.observer.StockNotificationE2ETest" time="0.002"/>
+  <testcase name="testRegisterEmailAlert" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Stock actualizado de Paracetamol: 2
+[EMAIL] A test@farmacia.com: Stock bajo de Paracetamol (2 unidades)
+]]></system-out>
+  </testcase>
+  <testcase name="testIncreaseStock" classname="e2e.observer.StockNotificationE2ETest" time="0.001">
+    <system-out><![CDATA[Reposición de Ibuprofeno a 15 unidades.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectReduceNonExistent" classname="e2e.observer.StockNotificationE2ETest" time="0.005">
+    <system-out><![CDATA[Producto no encontrado: NoExiste
+]]></system-out>
+  </testcase>
+  <testcase name="testObserverIndependence" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[[EMAIL] A email1@test.com: Stock bajo de Producto (2 unidades)
+[EMAIL] A email2@test.com: Stock bajo de Producto (2 unidades)
+[SMS] +123456789: quedan 2 unidades de Producto
+]]></system-out>
+  </testcase>
+  <testcase name="testPreventNegativeStock" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Stock actualizado de Paracetamol: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testRestockProduct" classname="e2e.observer.StockNotificationE2ETest" time="0.002">
+    <system-out><![CDATA[Reposición de Producto a 25 unidades.
+]]></system-out>
+  </testcase>
+  <testcase name="testRemoveObserver" classname="e2e.observer.StockNotificationE2ETest" time="0.003"/>
+  <testcase name="testNotifyWhenStockLow" classname="e2e.observer.StockNotificationE2ETest" time="0.001">
+    <system-out><![CDATA[Stock actualizado de Ibuprofeno: 3
+[EMAIL] A admin@farmacia.com: Stock bajo de Ibuprofeno (3 unidades)
+[SMS] +573001001001: quedan 3 unidades de Ibuprofeno
+]]></system-out>
+  </testcase>
+  <testcase name="testVeryHighStock" classname="e2e.observer.StockNotificationE2ETest" time="0.001"/>
 </testsuite>

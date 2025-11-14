@@ -1,7 +1,7 @@
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\factoryMethod\MedicineCreationE2ETest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\adapter\AdapterIntegrationTest.java
+C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\factoryMethod\FactoryCreatorIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\observer\StockNotificationE2ETest.java
-C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\command\CommandAndStateIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\Singleton\SingletonConfigTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\decorator\PriceDecoratorE2ETest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\state\OrderStateTest.java
@@ -14,6 +14,7 @@ C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\c
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\adapter\PaymentFlowE2ETest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\facade\SaleProcessE2ETest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\command\SalesCommandE2ETest.java
+C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\observer\ObserverIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\chainOfResponsability\ValidationFlowE2ETest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\Singleton\SingletonAndFacadeIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\facade\FacadeSaleTest.java
@@ -21,9 +22,9 @@ C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\state\Ord
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\command\CashierInvokerTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\adapter\PaymentControllerTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\Singleton\ConfigSingletonE2ETest.java
+C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\command\CommandIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\e2e\strategy\DiscountStrategyE2ETest.java
-C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\observer\ObserverAndChainIntegrationTest.java
+C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\facade\facadeIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\observer\InventorySubjectTest.java
-C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\factoryMethod\FactoryAndFacadeIntegrationTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Junit\decorator\DecoratorControllerTest.java
 C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\src\test\java\Integration\decorator\DecoratorAndStrategyIntegrationTest.java

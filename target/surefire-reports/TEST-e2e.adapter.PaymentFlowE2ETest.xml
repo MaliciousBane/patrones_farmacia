@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.adapter.PaymentFlowE2ETest" time="0.224" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.adapter.PaymentFlowE2ETest" time="0.381" tests="28" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,22 +58,130 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="shouldProcessValidPaymentsAndRejectInvalidOnes" classname="e2e.adapter.PaymentFlowE2ETest" time="0.141">
-    <system-out><![CDATA[
-Procesando pago por: Efectivo
-Pago en efectivo realizado. Cambio: $20000.0
-
-Procesando pago por: Tarjeta de Crédito
+  <testcase name="testProcessEWalletPaymentSuccessful" classname="e2e.adapter.PaymentFlowE2ETest" time="0.108">
+    <system-out><![CDATA[Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="testPaymentModeSwitch" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002"/>
+  <testcase name="testGetPaymentMethodName" classname="e2e.adapter.PaymentFlowE2ETest" time="0.005"/>
+  <testcase name="testCompletePaymentFlow" classname="e2e.adapter.PaymentFlowE2ETest" time="0.015">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $22000.0
 Pago con tarjeta realizado correctamente.
-
-Procesando pago por: E-Wallet
-Saldo insuficiente en billetera digital.
-
-Procesando pago por: Tarjeta de Crédito
-Límite de crédito insuficiente.
-
-Procesando pago por: Desconocido
-Modo de pago no soportado.
+Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectCreditCardPaymentLimitExceeded" classname="e2e.adapter.PaymentFlowE2ETest" time="0.004">
+    <system-out><![CDATA[Límite de crédito insuficiente.
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessPaymentExactBalance" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $0.0
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessMinimalPaymentAmount" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $29999.0
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessCashPaymentSuccessful" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $20000.0
+]]></system-out>
+  </testcase>
+  <testcase name="testPaymentMethodsIndependence" classname="e2e.adapter.PaymentFlowE2ETest" time="0.001">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $25000.0
+Pago con tarjeta realizado correctamente.
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessCreditCardPaymentSuccessful" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago con tarjeta realizado correctamente.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectNegativePaymentAmount" classname="e2e.adapter.PaymentFlowE2ETest" time="0.004"/>
+  <testcase name="testCreditCardCVVValidation" classname="e2e.adapter.PaymentFlowE2ETest" time="0.005"/>
+  <testcase name="testRecoveryFromPaymentFailures" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Fondos insuficientes en efectivo.
+Pago en efectivo realizado. Cambio: $20000.0
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectEmptyPaymentMethod" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Modo de pago no soportado.
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleSequentialCashPayments" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $25000.0
+Pago en efectivo realizado. Cambio: $15000.0
+Pago en efectivo realizado. Cambio: $0.0
+]]></system-out>
+  </testcase>
+  <testcase name="testPreserveWalletInformationAfterPayment" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectEWalletPaymentInsufficientBalance" classname="e2e.adapter.PaymentFlowE2ETest" time="0.004">
+    <system-out><![CDATA[Saldo insuficiente en billetera digital.
+]]></system-out>
+  </testcase>
+  <testcase name="testPaymentModeCaseInsensitive" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $29000.0
+Pago con tarjeta realizado correctamente.
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleSmallTransactions" classname="e2e.adapter.PaymentFlowE2ETest" time="0.012">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $29000.0
+Pago en efectivo realizado. Cambio: $28000.0
+Pago en efectivo realizado. Cambio: $27000.0
+Pago en efectivo realizado. Cambio: $26000.0
+Pago en efectivo realizado. Cambio: $25000.0
+Pago en efectivo realizado. Cambio: $24000.0
+Pago en efectivo realizado. Cambio: $23000.0
+Pago en efectivo realizado. Cambio: $22000.0
+Pago en efectivo realizado. Cambio: $21000.0
+Pago en efectivo realizado. Cambio: $20000.0
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectCashPaymentInsufficientBalance" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Fondos insuficientes en efectivo.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectPaymentAfterBalanceExhausted" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $0.0
+Fondos insuficientes en efectivo.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectZeroPaymentAmount" classname="e2e.adapter.PaymentFlowE2ETest" time="0.023">
+    <failure message="Debe rechazar monto cero ==&gt; expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Debe rechazar monto cero ==> expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:235)
+	at e2e.adapter.PaymentFlowE2ETest.testRejectZeroPaymentAmount(PaymentFlowE2ETest.java:143)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $30000.0
+]]></system-out>
+  </testcase>
+  <testcase name="testCreditCardNumberValidation" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002"/>
+  <testcase name="testMultiplePaymentMethodsSequential" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $25000.0
+Pago con tarjeta realizado correctamente.
+Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectInvalidPaymentMethod" classname="e2e.adapter.PaymentFlowE2ETest" time="0.001">
+    <system-out><![CDATA[Modo de pago no soportado.
+]]></system-out>
+  </testcase>
+  <testcase name="testAllPaymentMethodsWork" classname="e2e.adapter.PaymentFlowE2ETest" time="0.004">
+    <system-out><![CDATA[Pago en efectivo realizado. Cambio: $29900.0
+Pago con tarjeta realizado correctamente.
+Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="testCreditCardOwnerValidation" classname="e2e.adapter.PaymentFlowE2ETest" time="0.003"/>
+  <testcase name="testPreserveCardInformationAfterPayment" classname="e2e.adapter.PaymentFlowE2ETest" time="0.002">
+    <system-out><![CDATA[Pago con tarjeta realizado correctamente.
 ]]></system-out>
   </testcase>
 </testsuite>

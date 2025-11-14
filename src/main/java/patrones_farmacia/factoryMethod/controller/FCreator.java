@@ -4,7 +4,7 @@ import patrones_farmacia.factoryMethod.model.*;
 
 public class FCreator {
 
-    public enum Type { GENERIC, BRAND, CONTROLLED }
+    public enum Type { GENERIC, BRAND, CONTROLLED, BRANDED }
 
     public Medicine createMedicine(Type type, String name, String info, double price) {
         switch (type) {

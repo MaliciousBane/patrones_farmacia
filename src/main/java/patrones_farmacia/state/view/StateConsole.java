@@ -1,6 +1,5 @@
 package patrones_farmacia.state.view;
 
-import patrones_farmacia.state.model.*;
 import patrones_farmacia.state.controller.*;
 
 public class StateConsole {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.command.view</a> &gt; <span class="el_source">CommandConsole.java</span></div><h1>CommandConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.command.view;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patrones_farmacia</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.command.view</a> &gt; <span class="el_source">CommandConsole.java</span></div><h1>CommandConsole.java</h1><pre class="source lang-java linenums">package patrones_farmacia.command.view;
 
 import patrones_farmacia.command.controller.*;
 import patrones_farmacia.command.model.SaleReceiver;
@@ -7,39 +7,39 @@ import patrones_farmacia.factoryMethod.model.*;
 import patrones_farmacia.factoryMethod.controller.FCreator;
 import java.util.Scanner;
 
-<span class="nc" id="L10">public class CommandConsole {</span>
+<span class="fc" id="L10">public class CommandConsole {</span>
 
     public void run() {
-<span class="nc" id="L13">        try (Scanner sc = new Scanner(System.in)) {</span>
-<span class="nc" id="L14">            SaleReceiver receiver = new SaleReceiver();</span>
-<span class="nc" id="L15">            CashierInvoker invoker = new CashierInvoker();</span>
-<span class="nc" id="L16">            FCreator creator = new FCreator();</span>
+<span class="fc" id="L13">        try (Scanner sc = new Scanner(System.in)) {</span>
+<span class="fc" id="L14">            SaleReceiver receiver = new SaleReceiver();</span>
+<span class="fc" id="L15">            CashierInvoker invoker = new CashierInvoker();</span>
+<span class="fc" id="L16">            FCreator creator = new FCreator();</span>
 
-<span class="nc" id="L18">            System.out.println(&quot;=== COMMAND - OPERACIONES DE VENTA ===&quot;);</span>
+<span class="fc" id="L18">            System.out.println(&quot;=== COMMAND - OPERACIONES DE VENTA ===&quot;);</span>
 
-<span class="nc" id="L20">            Medicine med1 = creator.createMedicine(FCreator.Type.BRAND, &quot;Dolex&quot;, &quot;GSK&quot;, 5000);</span>
-<span class="nc" id="L21">            Sale sale = new Sale(&quot;V001&quot;, &quot;Cliente1&quot;);</span>
-<span class="nc" id="L22">            sale.addMedicine(med1);</span>
+<span class="fc" id="L20">            Medicine med1 = creator.createMedicine(FCreator.Type.BRAND, &quot;Dolex&quot;, &quot;GSK&quot;, 5000);</span>
+<span class="fc" id="L21">            Sale sale = new Sale(&quot;V001&quot;, &quot;Cliente1&quot;);</span>
+<span class="fc" id="L22">            sale.addMedicine(med1);</span>
 
-<span class="nc" id="L24">            boolean active = true;</span>
-<span class="nc bnc" id="L25" title="All 2 branches missed.">            while (active) {</span>
-<span class="nc" id="L26">                System.out.println(&quot;\n1. Registrar venta\n2. Cancelar venta\n3. Devolver producto\n4. Deshacer última\n5. Salir&quot;);</span>
-<span class="nc" id="L27">                System.out.print(&quot;Opción: &quot;);</span>
-<span class="nc" id="L28">                int op = sc.nextInt(); sc.nextLine();</span>
+<span class="fc" id="L24">            boolean active = true;</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">            while (active) {</span>
+<span class="fc" id="L26">                System.out.println(&quot;\n1. Registrar venta\n2. Cancelar venta\n3. Devolver producto\n4. Deshacer última\n5. Salir&quot;);</span>
+<span class="fc" id="L27">                System.out.print(&quot;Opción: &quot;);</span>
+<span class="fc" id="L28">                int op = sc.nextInt(); sc.nextLine();</span>
 
-<span class="nc bnc" id="L30" title="All 6 branches missed.">                switch (op) {</span>
+<span class="pc bpc" id="L30" title="5 of 6 branches missed.">                switch (op) {</span>
 <span class="nc" id="L31">                    case 1 -&gt; invoker.executeCommand(new RegisterSaleCommand(receiver, sale));</span>
 <span class="nc" id="L32">                    case 2 -&gt; invoker.executeCommand(new CancelSaleCommand(receiver, &quot;V001&quot;));</span>
 <span class="nc" id="L33">                    case 3 -&gt; invoker.executeCommand(new ReturnProductCommand(receiver, &quot;V001&quot;, med1));</span>
 <span class="nc" id="L34">                    case 4 -&gt; invoker.undoLast();</span>
-<span class="nc" id="L35">                    case 5 -&gt; active = false;</span>
+<span class="fc" id="L35">                    case 5 -&gt; active = false;</span>
                 }
-<span class="nc" id="L37">            }</span>
+<span class="fc" id="L37">            }</span>
         }
-<span class="nc" id="L39">    }</span>
+<span class="fc" id="L39">    }</span>
 
     public static void main(String[] args) {
-<span class="nc" id="L42">        new CommandConsole().run();</span>
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L42">        new CommandConsole().run();</span>
+<span class="fc" id="L43">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

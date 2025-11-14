@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+Test set: Integration.factoryMethod.FactoryCreatorIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 19, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! -- in Integration.factoryMethod.FactoryCreatorIntegrationTest
+Integration.factoryMethod.FactoryCreatorIntegrationTest.pricePrecisionIsPreservedForLargeValues -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.pricePrecisionIsPreservedForLargeValues(FactoryCreatorIntegrationTest.java:183)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Integration.factoryMethod.FactoryCreatorIntegrationTest.typeStringsAreNonEmptyAndDescriptive -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.typeStringsAreNonEmptyAndDescriptive(FactoryCreatorIntegrationTest.java:189)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Integration.factoryMethod.FactoryCreatorIntegrationTest.creatingManyDifferentCombinations -- Time elapsed: 0.015 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.creatingManyDifferentCombinations(FactoryCreatorIntegrationTest.java:218)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

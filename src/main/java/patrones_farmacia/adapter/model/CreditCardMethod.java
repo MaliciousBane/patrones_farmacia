@@ -27,4 +27,8 @@ public class CreditCardMethod {
     public String getOwnerName() { return ownerName; }
 
     public double getLimit() { return limit; }
+
+    public String getCardNumber() { return cardNumber; }    
+
+    public String getCVV() { return cvv; }
 }

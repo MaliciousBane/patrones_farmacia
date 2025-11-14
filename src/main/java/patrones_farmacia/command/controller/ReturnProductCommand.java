@@ -3,7 +3,6 @@ package patrones_farmacia.command.controller;
 import patrones_farmacia.command.model.Command;
 import patrones_farmacia.command.model.SaleReceiver;
 import patrones_farmacia.factoryMethod.model.Medicine;
-import patrones_farmacia.facade.model.Sale;
 
 public class ReturnProductCommand implements Command {
 

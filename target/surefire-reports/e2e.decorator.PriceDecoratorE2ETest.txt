@@ -1,4 +1,64 @@
 -------------------------------------------------------------------------------
 Test set: e2e.decorator.PriceDecoratorE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in e2e.decorator.PriceDecoratorE2ETest
+Tests run: 34, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.195 s <<< FAILURE! -- in e2e.decorator.PriceDecoratorE2ETest
+e2e.decorator.PriceDecoratorE2ETest.testApplyDiscountSuccessfully -- Time elapsed: 0.023 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Descripción debe incluir descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testApplyDiscountSuccessfully(PriceDecoratorE2ETest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithTax -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Descripción debe incluir impuesto ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithTax(PriceDecoratorE2ETest.java:190)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscount -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Descripción debe incluir descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscount(PriceDecoratorE2ETest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.decorator.PriceDecoratorE2ETest.testApplyTaxSuccessfully -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Descripción debe incluir IVA ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testApplyTaxSuccessfully(PriceDecoratorE2ETest.java:82)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscountAndTax -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe contener descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscountAndTax(PriceDecoratorE2ETest.java:201)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: e2e.chainOfResponsability.ValidationFlowE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.065 s <<< FAILURE! -- in e2e.chainOfResponsability.ValidationFlowE2ETest
-e2e.chainOfResponsability.ValidationFlowE2ETest.testValidationChainForSale -- Time elapsed: 0.040 s <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.inventory" is null
-	at patrones_farmacia.chainOfResponsability.controller.StockValidationHandler.handle(StockValidationHandler.java:21)
-	at e2e.chainOfResponsability.ValidationFlowE2ETest.testValidationChainForSale(ValidationFlowE2ETest.java:29)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s -- in e2e.chainOfResponsability.ValidationFlowE2ETest

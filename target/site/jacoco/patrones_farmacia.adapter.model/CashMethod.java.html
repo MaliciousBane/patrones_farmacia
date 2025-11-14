@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CashMethod.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patronesrestaurante</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.adapter.model</a> &gt; <span class="el_source">CashMethod.java</span></div><h1>CashMethod.java</h1><pre class="source lang-java linenums">package patrones_farmacia.adapter.model;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CashMethod.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patrones_farmacia</a> &gt; <a href="index.source.html" class="el_package">patrones_farmacia.adapter.model</a> &gt; <span class="el_source">CashMethod.java</span></div><h1>CashMethod.java</h1><pre class="source lang-java linenums">package patrones_farmacia.adapter.model;
 
 public class CashMethod {
 
@@ -9,18 +9,18 @@ public class CashMethod {
 <span class="fc" id="L9">    }</span>
 
     public boolean cashPay(double amount) {
-<span class="pc bpc" id="L12" title="1 of 2 branches missed.">        if (cashAvailable &gt;= amount) {</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        if (cashAvailable &gt;= amount) {</span>
 <span class="fc" id="L13">            cashAvailable -= amount;</span>
 <span class="fc" id="L14">            System.out.println(&quot;Pago en efectivo realizado. Cambio: $&quot; + (cashAvailable));</span>
 <span class="fc" id="L15">            return true;</span>
         } else {
-<span class="nc" id="L17">            System.out.println(&quot;Fondos insuficientes en efectivo.&quot;);</span>
-<span class="nc" id="L18">            return false;</span>
+<span class="fc" id="L17">            System.out.println(&quot;Fondos insuficientes en efectivo.&quot;);</span>
+<span class="fc" id="L18">            return false;</span>
         }
     }
 
     public double getCashAvailable() {
-<span class="nc" id="L23">        return cashAvailable;</span>
+<span class="fc" id="L23">        return cashAvailable;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

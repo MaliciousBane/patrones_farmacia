@@ -1,20 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Junit.chainOfResponsability.ChainHandlerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! -- in Junit.chainOfResponsability.ChainHandlerTest
-Junit.chainOfResponsability.ChainHandlerTest.debeProcesarVentaConVariosMedicamentos -- Time elapsed: 0.004 s <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.inventory" is null
-	at patrones_farmacia.chainOfResponsability.controller.StockValidationHandler.handle(StockValidationHandler.java:21)
-	at Junit.chainOfResponsability.ChainHandlerTest.debeProcesarVentaConVariosMedicamentos(ChainHandlerTest.java:60)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
-Junit.chainOfResponsability.ChainHandlerTest.debeProcesarVentaExitosamentePorCadenaCompleta -- Time elapsed: 0.003 s <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.inventory" is null
-	at patrones_farmacia.chainOfResponsability.controller.StockValidationHandler.handle(StockValidationHandler.java:21)
-	at Junit.chainOfResponsability.ChainHandlerTest.debeProcesarVentaExitosamentePorCadenaCompleta(ChainHandlerTest.java:48)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 s -- in Junit.chainOfResponsability.ChainHandlerTest

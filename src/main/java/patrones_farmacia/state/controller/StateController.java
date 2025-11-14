@@ -2,7 +2,6 @@ package patrones_farmacia.state.controller;
 
 import patrones_farmacia.state.model.Order;
 import patrones_farmacia.state.model.StateOrder;
-import patrones_farmacia.state.model.PendientState;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class StateController {
         return summary;
     }
 
-    private Order findOrder(String orderId) {
+    public Order findOrder(String orderId) {
         for (Order o : orders) {
             if (o.getId().equalsIgnoreCase(orderId)) return o;
         }

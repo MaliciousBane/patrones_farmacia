@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.decorator.PriceDecoratorE2ETest" time="0.039" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.decorator.PriceDecoratorE2ETest" time="0.195" tests="34" errors="0" skipped="0" failures="5">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,5 +58,98 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="shouldApplyDiscountAndTaxCorrectly" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.026"/>
+  <testcase name="testConsistencyInMultipleCalculations" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.012"/>
+  <testcase name="testApplyDiscountToHighPrice" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.005"/>
+  <testcase name="testRejectNullProductForTax" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.01"/>
+  <testcase name="testRejectEmptyNameOnCreation" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testCreateBaseProductSuccessfully" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testApplyDiscountSuccessfully" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.023">
+    <failure message="Descripción debe incluir descuento ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Descripción debe incluir descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testApplyDiscountSuccessfully(PriceDecoratorE2ETest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="testApplyDiscountAndTaxCorrectly" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.005"/>
+  <testcase name="testIgnoreZeroTax" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testDescribeProductWithTax" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.013">
+    <failure message="Descripción debe incluir impuesto ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Descripción debe incluir impuesto ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithTax(PriceDecoratorE2ETest.java:190)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="testApplyMultipleDiscountsSequentially" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testDescribeNullProduct" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testApplyVariousTaxPercentages" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.004"/>
+  <testcase name="testDescribeProductWithDiscount" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.007">
+    <failure message="Descripción debe incluir descuento ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Descripción debe incluir descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscount(PriceDecoratorE2ETest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="testRejectNegativePriceOnCreation" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testCreateMultipleIndependentProducts" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testApplyTaxToLowPrice" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testApplyTaxSuccessfully" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003">
+    <failure message="Descripción debe incluir IVA ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Descripción debe incluir IVA ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testApplyTaxSuccessfully(PriceDecoratorE2ETest.java:82)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="testApplyDecimalTax" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testApplyDiscountAndTaxInCorrectOrder" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testIgnoreZeroDiscount" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testApplyMaximumDiscount" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testRejectNullProductForDiscount" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testProcessProductWithDecimalPrice" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testRejectNullProductForFinalPrice" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
+  <testcase name="testApplyDecimalDiscount" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testApplySameDiscountToMultipleProducts" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testCalculateFinalPriceWithoutModifiers" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testDescribeProductCorrectly" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testHandleSpecialProductNames" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.001"/>
+  <testcase name="testCompleteFlowWithMultipleDecorators" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.006"/>
+  <testcase name="testCapDiscountAt100Percent" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testDescribeProductWithDiscountAndTax" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.004">
+    <failure message="Debe contener descuento ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Debe contener descuento ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at e2e.decorator.PriceDecoratorE2ETest.testDescribeProductWithDiscountAndTax(PriceDecoratorE2ETest.java:201)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+  </testcase>
+  <testcase name="testApplyVariousDiscountPercentages" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.002"/>
+  <testcase name="testRejectNullNameOnCreation" classname="e2e.decorator.PriceDecoratorE2ETest" time="0.003"/>
 </testsuite>

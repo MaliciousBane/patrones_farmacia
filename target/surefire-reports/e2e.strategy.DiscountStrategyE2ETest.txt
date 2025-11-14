@@ -1,4 +1,43 @@
 -------------------------------------------------------------------------------
 Test set: e2e.strategy.DiscountStrategyE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in e2e.strategy.DiscountStrategyE2ETest
+Tests run: 37, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.108 s <<< FAILURE! -- in e2e.strategy.DiscountStrategyE2ETest
+e2e.strategy.DiscountStrategyE2ETest.percentageOver100 -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-1250.0> but was: <-250.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at e2e.strategy.DiscountStrategyE2ETest.percentageOver100(DiscountStrategyE2ETest.java:66)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.strategy.DiscountStrategyE2ETest.negativeTotalsBehavior -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-50.0> but was: <-100.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at e2e.strategy.DiscountStrategyE2ETest.negativeTotalsBehavior(DiscountStrategyE2ETest.java:298)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+e2e.strategy.DiscountStrategyE2ETest.percentageDecimal -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at e2e.strategy.DiscountStrategyE2ETest.percentageDecimal(DiscountStrategyE2ETest.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

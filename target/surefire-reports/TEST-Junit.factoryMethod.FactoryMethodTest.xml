@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.factoryMethod.FactoryMethodTest" time="0.009" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.factoryMethod.FactoryMethodTest" time="0.159" tests="55" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,6 +58,59 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testCreateBrandMedicine" classname="Junit.factoryMethod.FactoryMethodTest" time="0.003"/>
-  <testcase name="testCreateGenericMedicine" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="brandMedicineToStringIncludesBrand" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="brandMedicineLaboratoryIsBrandField" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createControlledMedicine_hasExpectedProperties" classname="Junit.factoryMethod.FactoryMethodTest" time="0.013"/>
+  <testcase name="create100Medicines" classname="Junit.factoryMethod.FactoryMethodTest" time="0.003"/>
+  <testcase name="createBrandWithEmptyBrand" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="medicinesWithPreciseFloatingPointPrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="differentMedicines_canHaveSamePrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="laboratoryAndBrandAreFieldNames" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="factoryConsoleRunWorks" classname="Junit.factoryMethod.FactoryMethodTest" time="0.007"/>
+  <testcase name="sameNameDifferentTypesMakeDifferentInstances" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="controlledMedicineNullNamePreserves" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="sameNameAndLaboratoryGeneric" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="toStringNeverNull" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="createControlledWithEmptyCode" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="genericMedicineNullNamePreserves" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="decimalPrices_preserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="genericMedicineToStringIncludesLab" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createBrandMedicine_hasExpectedProperties" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="complexLaboratoryPreservedExactly" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="verySmallPricesPreserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.0"/>
+  <testcase name="longNamesAndLaboratories_areSupported" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="largNegativePricesPreserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="multipleInstances_areIndependent" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="controlledMedicineImplementsMedicine" classname="Junit.factoryMethod.FactoryMethodTest" time="0.003"/>
+  <testcase name="brandMedicineNullNamePreserves" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="controlledLaboratory_returnsCodeHealth" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="controlledMedicineToString_containsCodeAndPrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="fcreatorTypeEnumHas4Values" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="createGenericWithEmptyLaboratory" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="brandMedicineImplementsMedicine" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="concurrentCreationWorks" classname="Junit.factoryMethod.FactoryMethodTest" time="0.014"/>
+  <testcase name="complexNamesPreservedExactly" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="factoryCreatesIndependentInstances" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="toStringShowsCompleteInfo" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createGenericMedicine_hasExpectedProperties" classname="Junit.factoryMethod.FactoryMethodTest" time="0.006"/>
+  <testcase name="exactlyZeroPrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="genericMedicineImplementsMedicine" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="veryLargePricesPreserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="toStringContainsDollarSignForPrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.003"/>
+  <testcase name="namesWithSpecialCharacters" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="unsupportedBrandedType_throwsIllegalArgumentException" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="genericMedicineToString_containsPriceAndName" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="getTypeNeverNull" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="nullType_throwsNullPointerException" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="typeStrings_areConsistent" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="getLaboratoryNeverNull" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="complexInvimaCodePreserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="isControlledOnlyTrueForControlled" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createMultipleBrandMedicines" classname="Junit.factoryMethod.FactoryMethodTest" time="0.002"/>
+  <testcase name="toStringContainsTypeIndicatorsForAllTypes" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="tinyPrice" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="controlledMedicineToStringIncludesInvima" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createMultipleGenericMedicines" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="createMultipleControlledMedicines" classname="Junit.factoryMethod.FactoryMethodTest" time="0.001"/>
+  <testcase name="negativeAndZeroPrices_areAcceptedAndPreserved" classname="Junit.factoryMethod.FactoryMethodTest" time="0.0"/>
 </testsuite>

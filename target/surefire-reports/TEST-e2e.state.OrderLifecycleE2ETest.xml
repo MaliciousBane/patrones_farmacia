@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.state.OrderLifecycleE2ETest" time="0.029" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="e2e.state.OrderLifecycleE2ETest" time="0.112" tests="31" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,17 +58,217 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="shouldTransitionThroughAllOrderStates" classname="e2e.state.OrderLifecycleE2ETest" time="0.023">
-    <failure message="La orden debe comenzar en estado Pendiente ==&gt; expected: &lt;Pendiente&gt; but was: &lt;PENDIENTE&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: La orden debe comenzar en estado Pendiente ==> expected: <Pendiente> but was: <PENDIENTE>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at e2e.state.OrderLifecycleE2ETest.shouldTransitionThroughAllOrderStates(OrderLifecycleE2ETest.java:13)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
+  <testcase name="testRejectWhitespaceIdOnCreation" classname="e2e.state.OrderLifecycleE2ETest" time="0.002"/>
+  <testcase name="testCreateOrderInPendientState" classname="e2e.state.OrderLifecycleE2ETest" time="0.004">
+    <system-out><![CDATA[Pedido creado: ORD-001 (estado: PENDIENTE)
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectProductInNonExistentOrder" classname="e2e.state.OrderLifecycleE2ETest" time="0.001"/>
+  <testcase name="testTransitionToDeliveredState" classname="e2e.state.OrderLifecycleE2ETest" time="0.01">
+    <system-out><![CDATA[Pedido creado: ORD-003 (estado: PENDIENTE)
+Procesando pedido ORD-003 (estado actual: PENDIENTE)
+Pedido ORD-003 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-003 (estado actual: PAGADO)
+Pedido ORD-003 pagado, pasa a ENTREGADO.
+Nuevo estado: ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testSummaryIncludeAllStates" classname="e2e.state.OrderLifecycleE2ETest" time="0.005">
+    <system-out><![CDATA[Pedido creado: ORD-020 (estado: PENDIENTE)
+Pedido creado: ORD-021 (estado: PENDIENTE)
+Pedido creado: ORD-022 (estado: PENDIENTE)
+Procesando pedido ORD-021 (estado actual: PENDIENTE)
+Pedido ORD-021 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-022 (estado actual: PENDIENTE)
+Pedido ORD-022 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-022 (estado actual: PAGADO)
+Pedido ORD-022 pagado, pasa a ENTREGADO.
+Nuevo estado: ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testAddProductToOrder" classname="e2e.state.OrderLifecycleE2ETest" time="0.003">
+    <system-out><![CDATA[Pedido creado: ORD-005 (estado: PENDIENTE)
+Producto 'Paracetamol' añadido al pedido ORD-005
+]]></system-out>
+  </testcase>
+  <testcase name="testPreserveProductsAfterProcessing" classname="e2e.state.OrderLifecycleE2ETest" time="0.003">
+    <system-out><![CDATA[Pedido creado: ORD-015 (estado: PENDIENTE)
+Producto 'Paracetamol' añadido al pedido ORD-015
+Producto 'Ibuprofeno' añadido al pedido ORD-015
+Procesando pedido ORD-015 (estado actual: PENDIENTE)
+Pedido ORD-015 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessMultipleOrdersSequentially" classname="e2e.state.OrderLifecycleE2ETest" time="0.003">
+    <system-out><![CDATA[Pedido creado: ORD-SEQ-1 (estado: PENDIENTE)
+Producto 'Producto1' añadido al pedido ORD-SEQ-1
+Procesando pedido ORD-SEQ-1 (estado actual: PENDIENTE)
+Pedido ORD-SEQ-1 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Pedido creado: ORD-SEQ-2 (estado: PENDIENTE)
+Producto 'Producto2' añadido al pedido ORD-SEQ-2
+Procesando pedido ORD-SEQ-2 (estado actual: PENDIENTE)
+Pedido ORD-SEQ-2 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Pedido creado: ORD-SEQ-3 (estado: PENDIENTE)
+Producto 'Producto3' añadido al pedido ORD-SEQ-3
+Procesando pedido ORD-SEQ-3 (estado actual: PENDIENTE)
+Pedido ORD-SEQ-3 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Pedido creado: ORD-SEQ-4 (estado: PENDIENTE)
+Producto 'Producto4' añadido al pedido ORD-SEQ-4
+Procesando pedido ORD-SEQ-4 (estado actual: PENDIENTE)
+Pedido ORD-SEQ-4 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Pedido creado: ORD-SEQ-5 (estado: PENDIENTE)
+Producto 'Producto5' añadido al pedido ORD-SEQ-5
+Procesando pedido ORD-SEQ-5 (estado actual: PENDIENTE)
+Pedido ORD-SEQ-5 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleIndependentOrders" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-A (estado: PENDIENTE)
+Pedido creado: ORD-B (estado: PENDIENTE)
+Pedido creado: ORD-C (estado: PENDIENTE)
+Procesando pedido ORD-A (estado actual: PENDIENTE)
+Pedido ORD-A confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-B (estado actual: PENDIENTE)
+Pedido ORD-B confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-B (estado actual: PAGADO)
+Pedido ORD-B pagado, pasa a ENTREGADO.
+Nuevo estado: ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testValidateStateTransitions" classname="e2e.state.OrderLifecycleE2ETest" time="0.006">
+    <system-out><![CDATA[Pedido ORD-019 confirmado, pasa a estado PAGADO.
+Pedido ORD-019 pagado, pasa a ENTREGADO.
+]]></system-out>
+  </testcase>
+  <testcase name="testListOrdersSummary" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-010 (estado: PENDIENTE)
+Pedido creado: ORD-011 (estado: PENDIENTE)
+Pedido creado: ORD-012 (estado: PENDIENTE)
+]]></system-out>
+  </testcase>
+  <testcase name="testRemainInDeliveredState" classname="e2e.state.OrderLifecycleE2ETest" time="0.003">
+    <system-out><![CDATA[Pedido creado: ORD-004 (estado: PENDIENTE)
+Procesando pedido ORD-004 (estado actual: PENDIENTE)
+Pedido ORD-004 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-004 (estado actual: PAGADO)
+Pedido ORD-004 pagado, pasa a ENTREGADO.
+Nuevo estado: ENTREGADO
+Procesando pedido ORD-004 (estado actual: ENTREGADO)
+Pedido ORD-004 ya fue entregado al cliente.
+Nuevo estado: ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testTransitionToPaidState" classname="e2e.state.OrderLifecycleE2ETest" time="0.003">
+    <system-out><![CDATA[Pedido creado: ORD-002 (estado: PENDIENTE)
+Procesando pedido ORD-002 (estado actual: PENDIENTE)
+Pedido ORD-002 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testGetCorrectStateAfterForcedChange" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-016 (estado: PENDIENTE)
+Estado forzado de ORD-016 a PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testForceStateChange" classname="e2e.state.OrderLifecycleE2ETest" time="0.001">
+    <system-out><![CDATA[Pedido creado: ORD-008 (estado: PENDIENTE)
+Estado forzado de ORD-008 a ENTREGADO
+Pedido creado: ORD-009 (estado: PENDIENTE)
+Estado forzado de ORD-009 a ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testProcessOrderWithManyProducts" classname="e2e.state.OrderLifecycleE2ETest" time="0.004">
+    <system-out><![CDATA[Pedido creado: ORD-023 (estado: PENDIENTE)
+Producto 'Producto0' añadido al pedido ORD-023
+Producto 'Producto1' añadido al pedido ORD-023
+Producto 'Producto2' añadido al pedido ORD-023
+Producto 'Producto3' añadido al pedido ORD-023
+Producto 'Producto4' añadido al pedido ORD-023
+Producto 'Producto5' añadido al pedido ORD-023
+Producto 'Producto6' añadido al pedido ORD-023
+Producto 'Producto7' añadido al pedido ORD-023
+Producto 'Producto8' añadido al pedido ORD-023
+Producto 'Producto9' añadido al pedido ORD-023
+Procesando pedido ORD-023 (estado actual: PENDIENTE)
+Pedido ORD-023 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectStateChangeOnNullOrder" classname="e2e.state.OrderLifecycleE2ETest" time="0.001"/>
+  <testcase name="testCompleteFlowToDelivery" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-018 (estado: PENDIENTE)
+Producto 'Paracetamol' añadido al pedido ORD-018
+Producto 'Ibuprofeno' añadido al pedido ORD-018
+Procesando pedido ORD-018 (estado actual: PENDIENTE)
+Pedido ORD-018 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+Procesando pedido ORD-018 (estado actual: PAGADO)
+Pedido ORD-018 pagado, pasa a ENTREGADO.
+Nuevo estado: ENTREGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectNullIdOnCreation" classname="e2e.state.OrderLifecycleE2ETest" time="0.003"/>
+  <testcase name="testTransitionThroughAllOrderStates" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-E2E (estado: PENDIENTE)
+Pedido ORD-E2E confirmado, pasa a estado PAGADO.
+Pedido ORD-E2E pagado, pasa a ENTREGADO.
+]]></system-out>
+  </testcase>
+  <testcase name="testReturnNullForNonExistentId" classname="e2e.state.OrderLifecycleE2ETest" time="0.001"/>
+  <testcase name="testProcessOrderSuccessfully" classname="e2e.state.OrderLifecycleE2ETest" time="0.001">
+    <system-out><![CDATA[Pedido creado: ORD-007 (estado: PENDIENTE)
+Procesando pedido ORD-007 (estado actual: PENDIENTE)
+Pedido ORD-007 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateOrderWithSpecialName" classname="e2e.state.OrderLifecycleE2ETest" time="0.001">
+    <system-out><![CDATA[Pedido creado: ORD-2024-001 (estado: PENDIENTE)
+]]></system-out>
+  </testcase>
+  <testcase name="testAddMultipleProductsToOrder" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-006 (estado: PENDIENTE)
+Producto 'Paracetamol' añadido al pedido ORD-006
+Producto 'Ibuprofeno' añadido al pedido ORD-006
+Producto 'Amoxicilina' añadido al pedido ORD-006
+]]></system-out>
+  </testcase>
+  <testcase name="testPreserveOrderId" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-UNIQUE-001 (estado: PENDIENTE)
+Procesando pedido ORD-UNIQUE-001 (estado actual: PENDIENTE)
+Pedido ORD-UNIQUE-001 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testRejectEmptyIdOnCreation" classname="e2e.state.OrderLifecycleE2ETest" time="0.002"/>
+  <testcase name="testRejectProcessNonExistentOrder" classname="e2e.state.OrderLifecycleE2ETest" time="0.001"/>
+  <testcase name="testFindOrderById" classname="e2e.state.OrderLifecycleE2ETest" time="0.002">
+    <system-out><![CDATA[Pedido creado: ORD-013 (estado: PENDIENTE)
+]]></system-out>
+  </testcase>
+  <testcase name="testCompleteFlowCreateAddProcess" classname="e2e.state.OrderLifecycleE2ETest" time="0.001">
+    <system-out><![CDATA[Pedido creado: ORD-017 (estado: PENDIENTE)
+Producto 'Paracetamol' añadido al pedido ORD-017
+Procesando pedido ORD-017 (estado actual: PENDIENTE)
+Pedido ORD-017 confirmado, pasa a estado PAGADO.
+Nuevo estado: PAGADO
+]]></system-out>
+  </testcase>
+  <testcase name="testEmptyOrdersList" classname="e2e.state.OrderLifecycleE2ETest" time="0.001"/>
+  <testcase name="testFindOrderCaseInsensitive" classname="e2e.state.OrderLifecycleE2ETest" time="0.001">
+    <system-out><![CDATA[Pedido creado: ORD-014 (estado: PENDIENTE)
+]]></system-out>
   </testcase>
 </testsuite>

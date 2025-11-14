@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Integration.adapter.AdapterIntegrationTest" time="0.053" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Integration.adapter.AdapterIntegrationTest" time="0.04" tests="12" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,16 +58,28 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="debeProcesarPagosConTodosLosMetodosValidos" classname="Integration.adapter.AdapterIntegrationTest" time="0.011">
+  <testcase name="debeProcesarMontoCeroSinCambiarSaldos" classname="Integration.adapter.AdapterIntegrationTest" time="0.005">
     <system-out><![CDATA[
 Procesando pago por: Efectivo
-Pago en efectivo realizado. Cambio: $20000.0
+Pago en efectivo realizado. Cambio: $30000.0
 
 Procesando pago por: Tarjeta de Crédito
 Pago con tarjeta realizado correctamente.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
 ]]></system-out>
   </testcase>
-  <testcase name="debeManejarMultiplesTransaccionesConsecutivas" classname="Integration.adapter.AdapterIntegrationTest" time="0.003">
+  <testcase name="debeSoportarModoEnMinusculas" classname="Integration.adapter.AdapterIntegrationTest" time="0.002">
+    <system-out><![CDATA[
+Procesando pago por: Tarjeta de Crédito
+Pago con tarjeta realizado correctamente.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
+  <testcase name="debeManejarMultiplesTransaccionesConsecutivas" classname="Integration.adapter.AdapterIntegrationTest" time="0.002">
     <system-out><![CDATA[
 Procesando pago por: Efectivo
 Pago en efectivo realizado. Cambio: $25000.0
@@ -79,23 +91,50 @@ Procesando pago por: Tarjeta de Crédito
 Pago con tarjeta realizado correctamente.
 ]]></system-out>
   </testcase>
-  <testcase name="debeRechazarMetodosDePagoInvalidos" classname="Integration.adapter.AdapterIntegrationTest" time="0.004">
+  <testcase name="debeRetornarNombresDeMetodoCorrectamente" classname="Integration.adapter.AdapterIntegrationTest" time="0.002"/>
+  <testcase name="debeRechazarMetodosDePagoInvalidos" classname="Integration.adapter.AdapterIntegrationTest" time="0.003">
     <system-out><![CDATA[
+Procesando pago por: Desconocido
+Modo de pago no soportado.
+
 Procesando pago por: Desconocido
 Modo de pago no soportado.
 ]]></system-out>
   </testcase>
-  <testcase name="debeRechazarPagosQueExcedenLimites" classname="Integration.adapter.AdapterIntegrationTest" time="0.004">
+  <testcase name="debeRechazarPagosQueExcedenLimites" classname="Integration.adapter.AdapterIntegrationTest" time="0.001">
     <system-out><![CDATA[
 Procesando pago por: E-Wallet
 Saldo insuficiente en billetera digital.
 
 Procesando pago por: Tarjeta de Crédito
 Límite de crédito insuficiente.
+
+Procesando pago por: Efectivo
+Fondos insuficientes en efectivo.
 ]]></system-out>
   </testcase>
-  <testcase name="debeActualizarSaldosDespuesDeProcesarPagos" classname="Integration.adapter.AdapterIntegrationTest" time="0.005">
+  <testcase name="montosNegativosIncrementanSaldos" classname="Integration.adapter.AdapterIntegrationTest" time="0.002">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Integration.adapter.AdapterIntegrationTest.montosNegativosIncrementanSaldos(AdapterIntegrationTest.java:133)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
     <system-out><![CDATA[
+Procesando pago por: Efectivo
+]]></system-out>
+  </testcase>
+  <testcase name="debeProcesarPagosConTodosLosMetodosValidosYActualizarSaldos" classname="Integration.adapter.AdapterIntegrationTest" time="0.002">
+    <system-out><![CDATA[
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
 Procesando pago por: Efectivo
 Pago en efectivo realizado. Cambio: $20000.0
 
@@ -103,5 +142,59 @@ Procesando pago por: Tarjeta de Crédito
 Pago con tarjeta realizado correctamente.
 ]]></system-out>
   </testcase>
-  <testcase name="debeValidarIntegracionCompletaDeMetodosPago" classname="Integration.adapter.AdapterIntegrationTest" time="0.003"/>
+  <testcase name="debeAgotarBilleteraConPagosPequenos" classname="Integration.adapter.AdapterIntegrationTest" time="0.001">
+    <system-out><![CDATA[
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+
+Procesando pago por: E-Wallet
+Saldo insuficiente en billetera digital.
+]]></system-out>
+  </testcase>
+  <testcase name="debeAgotarExactamenteLimiteTarjeta" classname="Integration.adapter.AdapterIntegrationTest" time="0.002">
+    <system-out><![CDATA[
+Procesando pago por: Tarjeta de Crédito
+Pago con tarjeta realizado correctamente.
+
+Procesando pago por: Tarjeta de Crédito
+Pago con tarjeta realizado correctamente.
+
+Procesando pago por: Tarjeta de Crédito
+Límite de crédito insuficiente.
+]]></system-out>
+  </testcase>
+  <testcase name="debeValidarIntegracionCompletaDeMetodosPago" classname="Integration.adapter.AdapterIntegrationTest" time="0.001"/>
+  <testcase name="cambiaDeModoYVerificaNombreFinal" classname="Integration.adapter.AdapterIntegrationTest" time="0.001">
+    <system-out><![CDATA[
+Procesando pago por: Efectivo
+Pago en efectivo realizado. Cambio: $29000.0
+
+Procesando pago por: Tarjeta de Crédito
+Pago con tarjeta realizado correctamente.
+
+Procesando pago por: E-Wallet
+Transferencia desde E-Wallet exitosa.
+]]></system-out>
+  </testcase>
 </testsuite>

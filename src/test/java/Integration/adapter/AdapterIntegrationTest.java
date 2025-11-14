@@ -7,10 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import patrones_farmacia.adapter.model.*;
 import patrones_farmacia.adapter.controller.PaymentController;
 
-@DisplayName("Pruebas de Integración del Patrón Adapter para Pagos")
+@DisplayName("Pruebas de Integración del Patrón Adapter para Pagos - Mejoradas")
 class AdapterIntegrationTest {
 
     private PaymentController controlador;
+    private AdapterPayMethod adaptador;
     private CashMethod metodoEfectivo;
     private CreditCardMethod metodoTarjeta;
     private EWalletMethod metodoBilletera;
@@ -20,75 +21,129 @@ class AdapterIntegrationTest {
         metodoEfectivo = new CashMethod(30000);
         metodoTarjeta = new CreditCardMethod("1111-2222", "Cliente Test", "999", 20000);
         metodoBilletera = new EWalletMethod("WAL-123", 8000);
-
-        AdapterPayMethod adaptador = new AdapterPayMethod(metodoEfectivo, metodoTarjeta, metodoBilletera);
+        adaptador = new AdapterPayMethod(metodoEfectivo, metodoTarjeta, metodoBilletera);
         controlador = new PaymentController(adaptador);
     }
 
     @Test
-    @DisplayName("Debe procesar correctamente pagos con todos los métodos válidos")
-    void debeProcesarPagosConTodosLosMetodosValidos() {
-        boolean pagoEfectivo = controlador.processPayment("CASH", 10000);
-        boolean pagoTarjeta = controlador.processPayment("CREDIT", 15000);
-
-        assertTrue(pagoEfectivo, "El pago en efectivo de $10.000 debe procesarse exitosamente");
-        assertTrue(pagoTarjeta, "El pago con tarjeta de $15.000 debe procesarse exitosamente");
+    @DisplayName("Procesa pagos válidos con todos los métodos y actualiza saldos")
+    void debeProcesarPagosConTodosLosMetodosValidosYActualizarSaldos() {
+        assertTrue(controlador.processPayment("EWALLET", 8000));
+        assertTrue(controlador.processPayment("CASH", 10000));
+        assertTrue(controlador.processPayment("CREDIT", 15000));
+        assertEquals(20000.0, metodoEfectivo.getCashAvailable(), 0.001);
+        assertEquals(5000.0, metodoTarjeta.getLimit(), 0.001);
+        assertEquals(0.0, metodoBilletera.getBalance(), 0.001);
     }
 
     @Test
-    @DisplayName("Debe rechazar pagos que exceden los límites disponibles")
+    @DisplayName("Rechaza pagos que exceden límites disponibles")
     void debeRechazarPagosQueExcedenLimites() {
-        boolean pagoBilleteraExcedido = controlador.processPayment("EWALLET", 10000);
-        boolean pagoTarjetaExcedido = controlador.processPayment("CREDIT", 50000);
-
-        assertFalse(pagoBilleteraExcedido, 
-            "El pago con billetera de $10.000 debe rechazarse (saldo: $8.000)");
-        assertFalse(pagoTarjetaExcedido, 
-            "El pago con tarjeta de $50.000 debe rechazarse (límite: $20.000)");
+        assertFalse(controlador.processPayment("EWALLET", 10000));
+        assertFalse(controlador.processPayment("CREDIT", 50000));
+        assertFalse(controlador.processPayment("CASH", 40000));
+        assertEquals(30000.0, metodoEfectivo.getCashAvailable(), 0.001);
+        assertEquals(20000.0, metodoTarjeta.getLimit(), 0.001);
+        assertEquals(8000.0, metodoBilletera.getBalance(), 0.001);
     }
 
     @Test
-    @DisplayName("Debe rechazar pagos con métodos de pago no reconocidos")
+    @DisplayName("Rechaza métodos de pago no reconocidos")
     void debeRechazarMetodosDePagoInvalidos() {
-        boolean pagoMetodoInvalido = controlador.processPayment("XXX", 500);
-
-        assertFalse(pagoMetodoInvalido, 
-            "Los métodos de pago no reconocidos deben ser rechazados");
+        assertFalse(controlador.processPayment("XXX", 500));
+        assertFalse(controlador.processPayment("", 100));
     }
 
     @Test
-    @DisplayName("Debe actualizar correctamente los saldos después de procesar pagos")
-    void debeActualizarSaldosDespuesDeProcesarPagos() {
-        controlador.processPayment("CASH", 10000);
-        controlador.processPayment("CREDIT", 15000);
-
-        assertEquals(20000, metodoEfectivo.getCashAvailable(), 
-            "El saldo en efectivo debe reducirse de $30.000 a $20.000");
-        assertEquals(5000, metodoTarjeta.getLimit(), 
-            "El límite de tarjeta debe reducirse de $20.000 a $5.000");
-        assertEquals(8000, metodoBilletera.getBalance(), 
-            "El saldo de la billetera debe permanecer en $8.000 (sin transacciones exitosas)");
-    }
-
-    @Test
-    @DisplayName("Debe manejar múltiples transacciones consecutivas correctamente")
+    @DisplayName("Permite múltiples transacciones consecutivas y mantiene saldos correctos")
     void debeManejarMultiplesTransaccionesConsecutivas() {
         assertTrue(controlador.processPayment("CASH", 5000));
         assertTrue(controlador.processPayment("CASH", 8000));
         assertTrue(controlador.processPayment("CREDIT", 10000));
-
-        assertEquals(17000, metodoEfectivo.getCashAvailable(), 
-            "Después de dos pagos en efectivo, el saldo debe ser $17.000");
-        assertEquals(10000, metodoTarjeta.getLimit(), 
-            "Después de un pago con tarjeta, el límite debe ser $10.000");
+        assertEquals(17000.0, metodoEfectivo.getCashAvailable(), 0.001);
+        assertEquals(10000.0, metodoTarjeta.getLimit(), 0.001);
     }
 
     @Test
-    @DisplayName("Debe validar que todos los métodos de pago estén integrados correctamente")
+    @DisplayName("Soporta modos en minúsculas y diferentes capitalizaciones")
+    void debeSoportarModoEnMinusculas() {
+        assertTrue(controlador.processPayment("credit", 5000));
+        assertEquals(15000.0, metodoTarjeta.getLimit(), 0.001);
+        assertTrue(controlador.processPayment("eWallet", 2000));
+        assertEquals(6000.0, metodoBilletera.getBalance(), 0.001);
+    }
+
+    @Test
+    @DisplayName("Valida nombres de modo en el adaptador")
+    void debeRetornarNombresDeMetodoCorrectamente() {
+        adaptador.setMode("CASH");
+        assertEquals("Efectivo", adaptador.getName());
+        adaptador.setMode("credit");
+        assertEquals("Tarjeta de Crédito", adaptador.getName());
+        adaptador.setMode("ewallet");
+        assertEquals("E-Wallet", adaptador.getName());
+    }
+
+    @Test
+    @DisplayName("Procesa montos cero sin alterar saldos")
+    void debeProcesarMontoCeroSinCambiarSaldos() {
+        assertTrue(controlador.processPayment("CASH", 0));
+        assertTrue(controlador.processPayment("CREDIT", 0));
+        assertTrue(controlador.processPayment("EWALLET", 0));
+        assertEquals(30000.0, metodoEfectivo.getCashAvailable(), 0.001);
+        assertEquals(20000.0, metodoTarjeta.getLimit(), 0.001);
+        assertEquals(8000.0, metodoBilletera.getBalance(), 0.001);
+    }
+
+    @Test
+    @DisplayName("Verifica que todos los componentes estén inicializados")
     void debeValidarIntegracionCompletaDeMetodosPago() {
-        assertNotNull(metodoEfectivo, "El método de efectivo debe estar inicializado");
-        assertNotNull(metodoTarjeta, "El método de tarjeta debe estar inicializado");
-        assertNotNull(metodoBilletera, "El método de billetera debe estar inicializado");
-        assertNotNull(controlador, "El controlador de pagos debe estar inicializado");
+        assertNotNull(metodoEfectivo);
+        assertNotNull(metodoTarjeta);
+        assertNotNull(metodoBilletera);
+        assertNotNull(adaptador);
+        assertNotNull(controlador);
+    }
+
+    @Test
+    @DisplayName("Permite agotar exactamente el límite de crédito")
+    void debeAgotarExactamenteLimiteTarjeta() {
+        assertTrue(controlador.processPayment("CREDIT", 5000));
+        assertTrue(controlador.processPayment("CREDIT", 15000));
+        assertEquals(0.0, metodoTarjeta.getLimit(), 0.001);
+        assertFalse(controlador.processPayment("CREDIT", 1));
+    }
+
+    @Test
+    @DisplayName("Permite realizar múltiples pagos pequeños en e-wallet hasta agotarla")
+    void debeAgotarBilleteraConPagosPequenos() {
+        for (int i = 0; i < 8; i++) {
+            assertTrue(controlador.processPayment("EWALLET", 1000));
+        }
+        assertEquals(0.0, metodoBilletera.getBalance(), 0.001);
+        assertFalse(controlador.processPayment("EWALLET", 1));
+    }
+
+    @Test
+    @DisplayName("Comportamiento con montos negativos incrementa saldos según implementación actual")
+    void montosNegativosIncrementanSaldos() {
+        double beforeCash = metodoEfectivo.getCashAvailable();
+        double beforeLimit = metodoTarjeta.getLimit();
+        double beforeWallet = metodoBilletera.getBalance();
+        assertTrue(controlador.processPayment("CASH", -1000));
+        assertTrue(controlador.processPayment("CREDIT", -2000));
+        assertTrue(controlador.processPayment("EWALLET", -500));
+        assertEquals(beforeCash + 1000, metodoEfectivo.getCashAvailable(), 0.001);
+        assertEquals(beforeLimit + 2000, metodoTarjeta.getLimit(), 0.001);
+        assertEquals(beforeWallet + 500, metodoBilletera.getBalance(), 0.001);
+    }
+
+    @Test
+    @DisplayName("Cambia de modo varias veces y mantiene correcto nombre-reportado después de la última acción")
+    void cambiaDeModoYVerificaNombreFinal() {
+        assertTrue(controlador.processPayment("CASH", 1000));
+        assertTrue(controlador.processPayment("credit", 2000));
+        assertTrue(controlador.processPayment("ewallet", 3000));
+        assertEquals("E-Wallet", adaptador.getName());
     }
 }

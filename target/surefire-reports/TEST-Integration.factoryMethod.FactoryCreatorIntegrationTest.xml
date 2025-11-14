@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.state.OrderTest" time="0.036" tests="7" errors="0" skipped="0" failures="6">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.063" tests="19" errors="2" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,100 +58,52 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="nuevaOrdenDebeEstarPendiente" classname="Junit.state.OrderTest" time="0.003">
-    <failure message="El estado inicial de una orden debe ser &apos;Pendiente&apos; ==&gt; expected: &lt;Pendiente&gt; but was: &lt;PENDIENTE&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: El estado inicial de una orden debe ser 'Pendiente' ==> expected: <Pendiente> but was: <PENDIENTE>
+  <testcase name="repeatedCreatesWithSameInputsAreDistinctObjects" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.002"/>
+  <testcase name="nullTypeThrowsNullPointerException" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="createControlledProducesCorrectProperties" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="pricePrecisionIsPreservedForLargeValues" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.002">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at Junit.state.OrderTest.nuevaOrdenDebeEstarPendiente(OrderStateTest.java:22)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.pricePrecisionIsPreservedForLargeValues(FactoryCreatorIntegrationTest.java:183)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 ]]></failure>
   </testcase>
-  <testcase name="debeTransicionarDePendienteAPagado" classname="Junit.state.OrderTest" time="0.005">
-    <failure message="Después de procesar una orden pendiente, debe pasar a estado &apos;Pagado&apos; ==&gt; expected: &lt;Pagado&gt; but was: &lt;PAGADO&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Después de procesar una orden pendiente, debe pasar a estado 'Pagado' ==> expected: <Pagado> but was: <PAGADO>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at Junit.state.OrderTest.debeTransicionarDePendienteAPagado(OrderStateTest.java:31)
+  <testcase name="toStringAlwaysContainsNameAndPrice" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="multipleCreatesReturnDistinctInstancesWithSameValues" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="invalidEnumTypeThrowsIllegalArgumentException" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="typeStringsAreNonEmptyAndDescriptive" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.002">
+    <error message="Tipo de medicamento no válido." type="java.lang.IllegalArgumentException"><![CDATA[java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.typeStringsAreNonEmptyAndDescriptive(FactoryCreatorIntegrationTest.java:189)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-    <system-out><![CDATA[Pedido ORD-001 confirmado, pasa a estado PAGADO.
-]]></system-out>
+]]></error>
   </testcase>
-  <testcase name="debeCompletarTodasLasTransicionesCorrectamente" classname="Junit.state.OrderTest" time="0.002">
-    <failure message="expected: &lt;Pendiente&gt; but was: &lt;PENDIENTE&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <Pendiente> but was: <PENDIENTE>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
-	at Junit.state.OrderTest.debeCompletarTodasLasTransicionesCorrectamente(OrderStateTest.java:59)
+  <testcase name="creatingWithWhitespaceOnlyNameAndLabStillReturnsMedicine" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="createGenericProducesCorrectProperties" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="toStringFormatsContainTypeHintsAndPrice" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="createBrandProducesCorrectProperties" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="specialCharactersAreHandled" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="longNameAndLaboratoryDoNotCrashFactory" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="acceptsZeroAndNegativePricesAsCreated" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="bulkCreationProducesUniqueInstances" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.005"/>
+  <testcase name="differentTypesProduceDifferentTypeStrings" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.001"/>
+  <testcase name="creatingManyDifferentCombinations" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.015">
+    <error message="Tipo de medicamento no válido." type="java.lang.IllegalArgumentException"><![CDATA[java.lang.IllegalArgumentException: Tipo de medicamento no válido.
+	at patrones_farmacia.factoryMethod.controller.FCreator.createMedicine(FCreator.java:18)
+	at Integration.factoryMethod.FactoryCreatorIntegrationTest.creatingManyDifferentCombinations(FactoryCreatorIntegrationTest.java:218)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
+]]></error>
   </testcase>
-  <testcase name="debeMantenerIdATravesDeTransiciones" classname="Junit.state.OrderTest" time="0.004">
-    <system-out><![CDATA[Pedido ORD-004 confirmado, pasa a estado PAGADO.
-Pedido ORD-004 pagado, pasa a ENTREGADO.
-]]></system-out>
-  </testcase>
-  <testcase name="debeTransicionarDePagadoAEntregado" classname="Junit.state.OrderTest" time="0.004">
-    <failure message="Después de procesar una orden pagada, debe pasar a estado &apos;Entregado&apos; ==&gt; expected: &lt;Entregado&gt; but was: &lt;ENTREGADO&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Después de procesar una orden pagada, debe pasar a estado 'Entregado' ==> expected: <Entregado> but was: <ENTREGADO>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at Junit.state.OrderTest.debeTransicionarDePagadoAEntregado(OrderStateTest.java:41)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-    <system-out><![CDATA[Pedido ORD-001 confirmado, pasa a estado PAGADO.
-Pedido ORD-001 pagado, pasa a ENTREGADO.
-]]></system-out>
-  </testcase>
-  <testcase name="ordenesDebenMantenerEstadosIndependientes" classname="Junit.state.OrderTest" time="0.003">
-    <failure message="expected: &lt;Pagado&gt; but was: &lt;PAGADO&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <Pagado> but was: <PAGADO>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
-	at Junit.state.OrderTest.ordenesDebenMantenerEstadosIndependientes(OrderStateTest.java:79)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-    <system-out><![CDATA[Pedido ORD-002 confirmado, pasa a estado PAGADO.
-]]></system-out>
-  </testcase>
-  <testcase name="debePermaneceEnEntregadoAlProcesarDeNuevo" classname="Junit.state.OrderTest" time="0.003">
-    <failure message="Una orden entregada debe permanecer en estado &apos;Entregado&apos; aunque se procese nuevamente ==&gt; expected: &lt;Entregado&gt; but was: &lt;ENTREGADO&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Una orden entregada debe permanecer en estado 'Entregado' aunque se procese nuevamente ==> expected: <Entregado> but was: <ENTREGADO>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at Junit.state.OrderTest.debePermaneceEnEntregadoAlProcesarDeNuevo(OrderStateTest.java:52)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-    <system-out><![CDATA[Pedido ORD-001 confirmado, pasa a estado PAGADO.
-Pedido ORD-001 pagado, pasa a ENTREGADO.
-Pedido ORD-001 ya fue entregado al cliente.
-]]></system-out>
-  </testcase>
+  <testcase name="namesPreservedCaseAndLaboratoryReturnedExactly" classname="Integration.factoryMethod.FactoryCreatorIntegrationTest" time="0.002"/>
 </testsuite>

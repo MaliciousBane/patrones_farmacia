@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.adapter.PaymentControllerTest" time="0.019" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.adapter.PaymentControllerTest" time="0.452" tests="48" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841 2025-11-14T17-53-21_565-jvmRun1 surefire-20251114175321872_1tmp surefire_0-20251114175321872_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire16816295422539480841\surefirebooter-20251114175321872_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -58,28 +58,65 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="debeRechazarPagoConTarjetaSobreLimite" classname="Junit.adapter.PaymentControllerTest" time="0.004">
-    <system-out><![CDATA[
-Procesando pago por: Tarjeta de Crédito
-Límite de crédito insuficiente.
-]]></system-out>
+  <testcase name="creditCardPaymentEqualToLimit" classname="Junit.adapter.PaymentControllerTest" time="0.007"/>
+  <testcase name="zeroPaymentCash" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="testEWalletSequenceAndDepletion" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="adapterWithOneNullMethod" classname="Junit.adapter.PaymentControllerTest" time="0.039"/>
+  <testcase name="testPaymentConsoleRunCompletes" classname="Junit.adapter.PaymentControllerTest" time="0.045"/>
+  <testcase name="testCreditCardZeroPayment" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="testPaymentControllerProcessPayment" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="testCashPaymentFailInsufficient" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testNegativeAmountReturnsFalse" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testNullModeReturnsFalse" classname="Junit.adapter.PaymentControllerTest" time="0.012"/>
+  <testcase name="testAdapterSwitchModesSequentially" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testModeCaseInsensitive" classname="Junit.adapter.PaymentControllerTest" time="0.014"/>
+  <testcase name="zeroPaymentCreditCard" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testCashExactBoundary" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="eWalletUnderBalance" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="mixedCaseModeNames" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="concurrentAdapterOperations" classname="Junit.adapter.PaymentControllerTest" time="0.135"/>
+  <testcase name="eWalletMultipleTransfersReduceBalance" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="adapterGetNameUnknownAndNull" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="eWalletExactBalance" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="zeroPaymentEWallet" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="creditCardMultiplePaymentsReduceLimit" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="creditCardPrintsMessageSuccess" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="adapterPrintsUnsupportedModeMessage" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="cashMethodPrintsMessageSuccess" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="eWalletPrintsMessageSuccess" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="concurrentPaymentsDoNotThrow" classname="Junit.adapter.PaymentControllerTest" time="0.006"/>
+  <testcase name="multipleModeSwitches" classname="Junit.adapter.PaymentControllerTest" time="0.008">
+    <failure message="expected: &lt;9700.0&gt; but was: &lt;9900.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <9700.0> but was: <9900.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
+	at Junit.adapter.PaymentControllerTest.multipleModeSwitches(PaymentControllerTest.java:392)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
   </testcase>
-  <testcase name="debeRechazarPagoEnEfectivoSinSaldoSuficiente" classname="Junit.adapter.PaymentControllerTest" time="0.001">
-    <system-out><![CDATA[
-Procesando pago por: Efectivo
-Fondos insuficientes en efectivo.
-]]></system-out>
-  </testcase>
-  <testcase name="debeProcesarPagoEnEfectivoExitosamente" classname="Junit.adapter.PaymentControllerTest" time="0.002">
-    <system-out><![CDATA[
-Procesando pago por: Efectivo
-Pago en efectivo realizado. Cambio: $80000.0
-]]></system-out>
-  </testcase>
-  <testcase name="debeProcesarPagoConBilleteraElectronica" classname="Junit.adapter.PaymentControllerTest" time="0.001">
-    <system-out><![CDATA[
-Procesando pago por: E-Wallet
-Transferencia desde E-Wallet exitosa.
-]]></system-out>
-  </testcase>
+  <testcase name="testPaymentControllerAdapterReference" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="testCashPaymentSuccess" classname="Junit.adapter.PaymentControllerTest" time="0.003"/>
+  <testcase name="testCreditCardEdgeLimitExact" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="stateMutationAfterPayments" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="creditCardPrintsMessageFailure" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="testCreditCardFailExceedLimit" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testModelGetters" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="testEWalletFailInsufficient" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="cashMethodPrintsMessageFailure" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="paymentControllerPrintsProcessando" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testAdapterNullMethods" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="paymentControllerGetAdapter" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="testCreditCardSuccessWithinLimit" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="eWalletPrintsMessageFailure" classname="Junit.adapter.PaymentControllerTest" time="0.002"/>
+  <testcase name="testInvalidModeReturnsFalse" classname="Junit.adapter.PaymentControllerTest" time="0.005"/>
+  <testcase name="paymentControllerInvalidMode" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="testCashMultiplePaymentsReduceSequentially" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="testAdapterGetName" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="adapterSetModeNull" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
+  <testcase name="creditCardPaymentJustOverLimit" classname="Junit.adapter.PaymentControllerTest" time="0.001"/>
 </testsuite>

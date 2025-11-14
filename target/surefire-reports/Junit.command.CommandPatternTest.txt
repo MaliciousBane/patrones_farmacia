@@ -1,45 +1,56 @@
 -------------------------------------------------------------------------------
 Test set: Junit.command.CommandPatternTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.023 s <<< FAILURE! -- in Junit.command.CommandPatternTest
-Junit.command.CommandPatternTest.testHistoryStoresExecutedCommands -- Time elapsed: 0.004 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at Junit.command.CommandPatternTest.testHistoryStoresExecutedCommands(CashierInvokerTest.java:87)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
-Junit.command.CommandPatternTest.testCancelNonExistingSaleShowsError -- Time elapsed: 0.002 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: Debe indicar error al cancelar venta inexistente. ==> expected: <true> but was: <false>
+Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.072 s <<< FAILURE! -- in Junit.command.CommandPatternTest
+Junit.command.CommandPatternTest.noDebeFallarAlDeshacerSinHistorial -- Time elapsed: 0.010 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe mostrar mensaje indicando que no hay comandos para deshacer ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
-	at Junit.command.CommandPatternTest.testCancelNonExistingSaleShowsError(CashierInvokerTest.java:104)
+	at Junit.command.CommandPatternTest.noDebeFallarAlDeshacerSinHistorial(CashierInvokerTest.java:145)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-Junit.command.CommandPatternTest.testCancelSaleCommandRemovesSale -- Time elapsed: 0.002 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: Debe cancelarse la venta con el ID correcto. ==> expected: <true> but was: <false>
+Junit.command.CommandPatternTest.debeAlmacenarHistorialDeComandos -- Time elapsed: 0.012 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El historial debe contener la venta CMD-004 ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
-	at Junit.command.CommandPatternTest.testCancelSaleCommandRemovesSale(CashierInvokerTest.java:58)
+	at Junit.command.CommandPatternTest.debeAlmacenarHistorialDeComandos(CashierInvokerTest.java:129)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-Junit.command.CommandPatternTest.testUndoWhenHistoryIsEmptyDoesNotFail -- Time elapsed: 0.003 s <<< FAILURE!
+Junit.command.CommandPatternTest.debeCancelarVentaExistente -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: La venta CMD-002 debe ser cancelada correctamente ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at Junit.command.CommandPatternTest.debeCancelarVentaExistente(CashierInvokerTest.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.command.CommandPatternTest.debeDeshacerUltimoComando -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe mostrar mensaje de deshacer la venta CMD-003 ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at Junit.command.CommandPatternTest.debeDeshacerUltimoComando(CashierInvokerTest.java:107)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.command.CommandPatternTest.debeEjecutarMultiplesComandosEnSecuencia -- Time elapsed: 0.006 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -47,20 +58,19 @@ org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at Junit.command.CommandPatternTest.testUndoWhenHistoryIsEmptyDoesNotFail(CashierInvokerTest.java:95)
+	at Junit.command.CommandPatternTest.debeEjecutarMultiplesComandosEnSecuencia(CashierInvokerTest.java:179)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-Junit.command.CommandPatternTest.testUndoRevertsLastCommand -- Time elapsed: 0.004 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+Junit.command.CommandPatternTest.debeMostrarErrorAlCancelarVentaInexistente -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe indicar que la venta CMD-999 no fue encontrada ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at Junit.command.CommandPatternTest.testUndoRevertsLastCommand(CashierInvokerTest.java:72)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at Junit.command.CommandPatternTest.debeMostrarErrorAlCancelarVentaInexistente(CashierInvokerTest.java:158)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)

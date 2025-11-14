@@ -7,11 +7,16 @@ import patrones_farmacia.state.model.Order;
 class OrderLifecycleE2ETest {
 
     @Test
-    void testFullOrderLifecycle() {
+    void shouldTransitionThroughAllOrderStates() {
         Order order = new Order("ORD-E2E");
-        assertEquals("Pendiente", order.getStateName());
-        order.process(); 
-        order.process(); 
-        assertEquals("Entregado", order.getStateName());
+        
+        assertEquals("Pendiente", order.getStateName(), 
+                     "La orden debe comenzar en estado Pendiente");
+        
+        order.process();
+        order.process();
+        
+        assertEquals("Entregado", order.getStateName(), 
+                     "La orden debe transicionar a estado Entregado después de procesar");
     }
 }

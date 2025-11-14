@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: e2e.facade.SaleProcessE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in e2e.facade.SaleProcessE2ETest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in e2e.facade.SaleProcessE2ETest

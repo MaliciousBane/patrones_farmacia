@@ -2,6 +2,8 @@ package Junit.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 import patrones_farmacia.command.controller.*;
@@ -13,95 +15,168 @@ import patrones_farmacia.factoryMethod.model.Medicine;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+@DisplayName("Pruebas del Patrón Command para Gestión de Ventas")
 class CommandPatternTest {
 
-    private SaleReceiver receiver;
-    private CashierInvoker invoker;
-    private FCreator creator;
-    private ByteArrayOutputStream consoleOutput;
+    private SaleReceiver receptorVentas;
+    private CashierInvoker invocadorCajero;
+    private FCreator creadorMedicamentos;
+    private ByteArrayOutputStream salidaConsola;
+    private PrintStream salidaOriginal;
 
     @BeforeEach
-    void setUp() {
-        receiver = new SaleReceiver();
-        invoker = new CashierInvoker();
-        creator = new FCreator();
+    void configurarPrueba() {
+        receptorVentas = new SaleReceiver();
+        invocadorCajero = new CashierInvoker();
+        creadorMedicamentos = new FCreator();
 
-        consoleOutput = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(consoleOutput));
+        salidaOriginal = System.out;
+        salidaConsola = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(salidaConsola));
+    }
+
+    @AfterEach
+    void restaurarSalida() {
+        System.setOut(salidaOriginal);
     }
 
     @Test
-    void testRegisterSaleCommandExecutesCorrectly() {
-        Sale sale = new Sale("CMD-001", "Cliente A");
-        sale.addMedicine(creator.createMedicine(FCreator.Type.GENERIC, "Ibuprofeno", "GenFarma", 3000));
+    @DisplayName("Debe registrar una venta correctamente al ejecutar el comando")
+    void debeRegistrarVentaCorrectamente() {
+        Sale venta = new Sale("CMD-001", "Ana Torres");
+        Medicine medicamento = creadorMedicamentos.createMedicine(
+            FCreator.Type.GENERIC, 
+            "Ibuprofeno", 
+            "GenFarma", 
+            3000
+        );
+        venta.addMedicine(medicamento);
 
-        RegisterSaleCommand cmd = new RegisterSaleCommand(receiver, sale);
-        invoker.executeCommand(cmd);
+        RegisterSaleCommand comandoRegistrar = new RegisterSaleCommand(receptorVentas, venta);
+        invocadorCajero.executeCommand(comandoRegistrar);
 
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("Venta registrada: CMD-001"),
-                   "Debe registrarse la venta correctamente.");
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("Venta registrada: CMD-001"),
+            "La salida debe confirmar que la venta CMD-001 fue registrada"
+        );
     }
 
     @Test
-    void testCancelSaleCommandRemovesSale() {
-        Sale sale = new Sale("CMD-002", "Cliente B");
-        sale.addMedicine(creator.createMedicine(FCreator.Type.BRAND, "Dolex Forte", "GSK", 6500));
+    @DisplayName("Debe cancelar una venta existente correctamente")
+    void debeCancelarVentaExistente() {
+        Sale venta = new Sale("CMD-002", "Roberto Díaz");
+        Medicine medicamento = creadorMedicamentos.createMedicine(
+            FCreator.Type.BRAND, 
+            "Dolex Forte", 
+            "GSK", 
+            6500
+        );
+        venta.addMedicine(medicamento);
 
-        RegisterSaleCommand register = new RegisterSaleCommand(receiver, sale);
-        invoker.executeCommand(register);
+        RegisterSaleCommand comandoRegistrar = new RegisterSaleCommand(receptorVentas, venta);
+        invocadorCajero.executeCommand(comandoRegistrar);
 
-        CancelSaleCommand cancel = new CancelSaleCommand(receiver, "CMD-002");
-        invoker.executeCommand(cancel);
+        CancelSaleCommand comandoCancelar = new CancelSaleCommand(receptorVentas, "CMD-002");
+        invocadorCajero.executeCommand(comandoCancelar);
 
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("Venta cancelada: CMD-002"),
-                   "Debe cancelarse la venta con el ID correcto.");
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("Venta cancelada: CMD-002"),
+            "La venta CMD-002 debe ser cancelada correctamente"
+        );
     }
 
     @Test
-    void testUndoRevertsLastCommand() {
-        Sale sale = new Sale("CMD-003", "Cliente C");
-        sale.addMedicine(creator.createMedicine(FCreator.Type.GENERIC, "Paracetamol", "TecnoFarma", 2800));
+    @DisplayName("Debe deshacer el último comando ejecutado correctamente")
+    void debeDeshacerUltimoComando() {
+        Sale venta = new Sale("CMD-003", "Laura Méndez");
+        Medicine medicamento = creadorMedicamentos.createMedicine(
+            FCreator.Type.GENERIC, 
+            "Paracetamol", 
+            "TecnoFarma", 
+            2800
+        );
+        venta.addMedicine(medicamento);
 
-        RegisterSaleCommand cmd = new RegisterSaleCommand(receiver, sale);
-        invoker.executeCommand(cmd);
-        invoker.undoLast();
+        RegisterSaleCommand comando = new RegisterSaleCommand(receptorVentas, venta);
+        invocadorCajero.executeCommand(comando);
+        invocadorCajero.undoLast();
 
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("Deshaciendo: Registrar Venta #CMD-003"));
-        assertTrue(output.contains("Venta cancelada: CMD-003"));
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("Deshaciendo: Registrar Venta #CMD-003"),
+            "Debe mostrar mensaje de deshacer la venta CMD-003"
+        );
+        assertTrue(
+            salida.contains("Venta cancelada: CMD-003"),
+            "La venta debe ser cancelada al deshacer el comando"
+        );
     }
 
     @Test
-    void testHistoryStoresExecutedCommands() {
-        Sale s1 = new Sale("CMD-004", "Cliente D");
-        Sale s2 = new Sale("CMD-005", "Cliente E");
+    @DisplayName("Debe almacenar el historial de comandos ejecutados")
+    void debeAlmacenarHistorialDeComandos() {
+        Sale venta1 = new Sale("CMD-004", "Pedro Sánchez");
+        Sale venta2 = new Sale("CMD-005", "Sofía Ruiz");
 
-        invoker.executeCommand(new RegisterSaleCommand(receiver, s1));
-        invoker.executeCommand(new RegisterSaleCommand(receiver, s2));
+        invocadorCajero.executeCommand(new RegisterSaleCommand(receptorVentas, venta1));
+        invocadorCajero.executeCommand(new RegisterSaleCommand(receptorVentas, venta2));
 
-        invoker.showHistory();
+        invocadorCajero.showHistory();
 
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("Registrar Venta #CMD-004"));
-        assertTrue(output.contains("Registrar Venta #CMD-005"));
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("Registrar Venta #CMD-004"),
+            "El historial debe contener la venta CMD-004"
+        );
+        assertTrue(
+            salida.contains("Registrar Venta #CMD-005"),
+            "El historial debe contener la venta CMD-005"
+        );
     }
 
     @Test
-    void testUndoWhenHistoryIsEmptyDoesNotFail() {
-        invoker.undoLast();
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("No hay comandos para deshacer."));
+    @DisplayName("No debe fallar al intentar deshacer cuando no hay comandos en el historial")
+    void noDebeFallarAlDeshacerSinHistorial() {
+        invocadorCajero.undoLast();
+        
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("No hay comandos para deshacer."),
+            "Debe mostrar mensaje indicando que no hay comandos para deshacer"
+        );
     }
 
     @Test
-    void testCancelNonExistingSaleShowsError() {
-        CancelSaleCommand cancel = new CancelSaleCommand(receiver, "CMD-999");
-        invoker.executeCommand(cancel);
+    @DisplayName("Debe mostrar error al cancelar una venta que no existe")
+    void debeMostrarErrorAlCancelarVentaInexistente() {
+        CancelSaleCommand comandoCancelar = new CancelSaleCommand(receptorVentas, "CMD-999");
+        invocadorCajero.executeCommand(comandoCancelar);
 
-        String output = consoleOutput.toString();
-        assertTrue(output.contains("No se encontró la venta CMD-999"),
-                   "Debe indicar error al cancelar venta inexistente.");
+        String salida = salidaConsola.toString();
+        assertTrue(
+            salida.contains("No se encontró la venta CMD-999"),
+            "Debe indicar que la venta CMD-999 no fue encontrada"
+        );
+    }
+
+    @Test
+    @DisplayName("Debe ejecutar múltiples comandos en secuencia correctamente")
+    void debeEjecutarMultiplesComandosEnSecuencia() {
+        Sale venta1 = new Sale("CMD-006", "Miguel Ángel");
+        Sale venta2 = new Sale("CMD-007", "Valentina López");
+        Sale venta3 = new Sale("CMD-008", "Diego Castro");
+
+        invocadorCajero.executeCommand(new RegisterSaleCommand(receptorVentas, venta1));
+        invocadorCajero.executeCommand(new RegisterSaleCommand(receptorVentas, venta2));
+        invocadorCajero.executeCommand(new CancelSaleCommand(receptorVentas, "CMD-006"));
+        invocadorCajero.executeCommand(new RegisterSaleCommand(receptorVentas, venta3));
+
+        String salida = salidaConsola.toString();
+        assertTrue(salida.contains("Venta registrada: CMD-006"));
+        assertTrue(salida.contains("Venta registrada: CMD-007"));
+        assertTrue(salida.contains("Venta cancelada: CMD-006"));
+        assertTrue(salida.contains("Venta registrada: CMD-008"));
     }
 }

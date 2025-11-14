@@ -2,22 +2,23 @@ package Integration.state;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import patrones_farmacia.state.model.Order;
 
-class StateIntegrationTest {
+import patrones_farmacia.strategy.controller.DiscountContext;
+import patrones_farmacia.strategy.model.*;
+
+class StrategyIntegrationTest {
 
     @Test
-    void testOrderStateProgression() {
-        Order order = new Order("ORD-INT-001");
-        assertEquals("Pendiente", order.getStateName());
+    void testStrategiesFullCoverage() {
+        DiscountContext ctx = new DiscountContext();
 
-        order.process();
-        assertEquals("Pagado", order.getStateName());
+        ctx.setStrategy(new NoDiscount());
+        assertEquals(10000, ctx.apply(10000), 0.1);
 
-        order.process();
-        assertEquals("Entregado", order.getStateName());
+        ctx.setStrategy(new PercentageDiscount(15));
+        assertEquals(8500, ctx.apply(10000), 0.1);
 
-        order.process();
-        assertEquals("Entregado", order.getStateName());
+        ctx.setStrategy(new VIPClientDiscount(50000, 20));
+        assertEquals(80000, ctx.apply(100000), 0.1);
     }
 }

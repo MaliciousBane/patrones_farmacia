@@ -7,12 +7,15 @@ import patrones_farmacia.observer.model.*;
 class StockNotificationE2ETest {
 
     @Test
-    void testLowStockAlertsAreSent() {
+    void shouldSendAlertsWhenStockReachesThreshold() {
         InventorySubject subject = new InventorySubject(5);
+        
         subject.addObserver(new EmailAlert("admin@farmacia.com"));
         subject.addObserver(new SMSAlert("+573001001001"));
+        
         subject.addProduct("Ibuprofeno", 10);
 
-        assertDoesNotThrow(() -> subject.addProduct("Ibuprofeno", 2));
+        assertDoesNotThrow(() -> subject.addProduct("Ibuprofeno", 2), 
+                           "Las alertas de stock bajo deben enviarse sin errores");
     }
 }

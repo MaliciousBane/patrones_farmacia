@@ -1,16 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: e2e.state.OrderLifecycleE2ETest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 s <<< FAILURE! -- in e2e.state.OrderLifecycleE2ETest
-e2e.state.OrderLifecycleE2ETest.testFullOrderLifecycle -- Time elapsed: 0.010 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Pendiente> but was: <PENDIENTE>
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! -- in e2e.state.OrderLifecycleE2ETest
+e2e.state.OrderLifecycleE2ETest.shouldTransitionThroughAllOrderStates -- Time elapsed: 0.023 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: La orden debe comenzar en estado Pendiente ==> expected: <Pendiente> but was: <PENDIENTE>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
-	at e2e.state.OrderLifecycleE2ETest.testFullOrderLifecycle(OrderLifecycleE2ETest.java:12)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
+	at e2e.state.OrderLifecycleE2ETest.shouldTransitionThroughAllOrderStates(OrderLifecycleE2ETest.java:13)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)

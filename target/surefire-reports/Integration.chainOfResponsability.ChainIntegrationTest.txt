@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Integration.chainOfResponsability.ChainIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! -- in Integration.chainOfResponsability.ChainIntegrationTest
-Integration.chainOfResponsability.ChainIntegrationTest.testFullValidationChain -- Time elapsed: 0.004 s <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.010 s <<< FAILURE! -- in Integration.chainOfResponsability.ChainIntegrationTest
+Integration.chainOfResponsability.ChainIntegrationTest.testFullValidationChain -- Time elapsed: 0.005 s <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.inventory" is null
 	at patrones_farmacia.chainOfResponsability.controller.StockValidationHandler.handle(StockValidationHandler.java:21)
 	at Integration.chainOfResponsability.ChainIntegrationTest.testFullValidationChain(ChainIntegrationTest.java:33)

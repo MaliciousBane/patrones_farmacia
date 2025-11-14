@@ -1,14 +1,50 @@
 -------------------------------------------------------------------------------
 Test set: Junit.observer.InventorySubjectTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.875 s <<< FAILURE! -- in Junit.observer.InventorySubjectTest
-Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow -- Time elapsed: 1.863 s <<< FAILURE!
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 3.422 s <<< FAILURE! -- in Junit.observer.InventorySubjectTest
+Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo -- Time elapsed: 3.375 s <<< FAILURE!
 Wanted but not invoked:
 farmaObserver.update("Paracetamol", 3);
--> at Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow(InventorySubjectTest.java:25)
+-> at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo(InventorySubjectTest.java:32)
 Actually, there were zero interactions with this mock.
 
-	at Junit.observer.InventorySubjectTest.testObserverNotifiedWhenStockLow(InventorySubjectTest.java:25)
+	at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEstaBajo(InventorySubjectTest.java:32)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente -- Time elapsed: 0.011 s <<< FAILURE!
+Wanted but not invoked:
+farmaObserver.update(
+    "Amoxicilina",
+    <any integer>
+);
+-> at Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente(InventorySubjectTest.java:62)
+Actually, there were zero interactions with this mock.
+
+	at Junit.observer.InventorySubjectTest.debeNotificarMultiplesVecesSiStockBajaRepetidamente(InventorySubjectTest.java:62)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral -- Time elapsed: 0.005 s <<< FAILURE!
+Wanted but not invoked:
+farmaObserver.update("Ibuprofeno", 5);
+-> at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral(InventorySubjectTest.java:51)
+Actually, there were zero interactions with this mock.
+
+	at Junit.observer.InventorySubjectTest.debeNotificarCuandoStockEsIgualAlUmbral(InventorySubjectTest.java:51)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores -- Time elapsed: 0.005 s <<< FAILURE!
+Wanted but not invoked:
+farmaObserver.update("Aspirina", 3);
+-> at Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores(InventorySubjectTest.java:74)
+Actually, there were zero interactions with this mock.
+
+	at Junit.observer.InventorySubjectTest.debeNotificarAMultiplesObservadores(InventorySubjectTest.java:74)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)

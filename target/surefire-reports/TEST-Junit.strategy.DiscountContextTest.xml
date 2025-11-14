@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.strategy.DiscountContextTest" time="0.01" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Junit.strategy.DiscountContextTest" time="0.03" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire7170370282444585409\surefirebooter-20251110093434914_3.jar C:\Users\finea\AppData\Local\Temp\surefire7170370282444585409 2025-11-10T09-34-34_739-jvmRun1 surefire-20251110093434914_1tmp surefire_0-20251110093434914_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255 2025-11-13T19-53-57_243-jvmRun1 surefire-20251113195357639_1tmp surefire_0-20251113195357639_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\test-classes;C:\Users\finea\OneDrive\Escritorio\patrones_farmacia\target\classes;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\finea\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\finea\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\finea\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\finea\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\finea\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\finea\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\finea\.m2\repository\org\mockito\mockito-junit-jupiter\5.12.0\mockito-junit-jupiter-5.12.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire7170370282444585409\surefirebooter-20251110093434914_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\finea\AppData\Local\Temp\surefire1283729411426141255\surefirebooter-20251113195357639_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -50,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\finea\Downloads\maven\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Users\finea\AppData\Local\Programs\Python\Launcher\;C:\Users\finea\AppData\Local\Microsoft\WindowsApps;C:\Users\finea\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\finea\AppData\Roaming\npm;C:\Users\finea\.dotnet\tools;c:\Users\finea\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;c:\Users\finea\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\Users\finea\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\finea\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\finea\Downloads\maven\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Users\finea\AppData\Local\Programs\Python\Launcher\;C:\Users\finea\AppData\Local\Microsoft\WindowsApps;C:\Users\finea\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\finea\AppData\Roaming\npm;C:\Users\finea\.dotnet\tools;c:\Users\finea\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -58,7 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testVipDiscountAppliesWhenThresholdMet" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
-  <testcase name="testPercentageDiscount" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
-  <testcase name="testNoDiscountStrategy" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="debeAplicarDescuentoPorcentualAlto" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
+  <testcase name="debeAplicarDescuentoPorcentual" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="debeManejarDescuentosConValoresDecimales" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="debeCambiarEstrategiaDescuentoDinamicamente" classname="Junit.strategy.DiscountContextTest" time="0.003"/>
+  <testcase name="descuentoVIPNoDebeAplicarseSinAlcanzarUmbral" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="debeAplicarDescuentoVIPCuandoCumpleUmbral" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="descuentoVIPConUmbralExactoDebeAplicarse" classname="Junit.strategy.DiscountContextTest" time="0.002"/>
+  <testcase name="noDebeAplicarDescuentoConEstrategiaNoDiscount" classname="Junit.strategy.DiscountContextTest" time="0.001"/>
 </testsuite>

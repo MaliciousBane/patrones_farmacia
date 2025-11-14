@@ -2,7 +2,6 @@ package e2e.command;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import patrones_farmacia.command.controller.*;
 import patrones_farmacia.command.model.SaleReceiver;
 import patrones_farmacia.facade.model.Sale;
@@ -10,10 +9,11 @@ import patrones_farmacia.facade.model.Sale;
 class SalesCommandE2ETest {
 
     @Test
-    void testRegisterAndCancelSalesUsingCommands() {
+    void shouldExecuteRegisterAndCancelCommandsSuccessfully() {
         SaleReceiver receiver = new SaleReceiver();
         CashierInvoker invoker = new CashierInvoker();
 
+        // Given: Sale and commands
         Sale sale = new Sale("CMD-E2E", "Cliente E2E");
         RegisterSaleCommand register = new RegisterSaleCommand(receiver, sale);
         CancelSaleCommand cancel = new CancelSaleCommand(receiver, "CMD-E2E");
@@ -21,6 +21,6 @@ class SalesCommandE2ETest {
         assertDoesNotThrow(() -> {
             invoker.executeCommand(register);
             invoker.executeCommand(cancel);
-        });
+        }, "Los comandos de registro y cancelación deben ejecutarse exitosamente");
     }
 }

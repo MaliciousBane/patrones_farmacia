@@ -2,13 +2,11 @@ e2e\chainOfResponsability\ValidationFlowE2ETest.class
 e2e\facade\SaleProcessE2ETest.class
 Integration\factoryMethod\FactoryAndFacadeIntegrationTest.class
 Junit\Singleton\ConfigManagerTest.class
-Integration\command\CommandAndStateIntegrationTest.class
 e2e\state\OrderLifecycleE2ETest.class
 e2e\Singleton\ConfigSingletonE2ETest.class
 Integration\chainOfResponsability\ChainIntegrationTest.class
 e2e\observer\StockNotificationE2ETest.class
 e2e\command\SalesCommandE2ETest.class
-Integration\state\StateIntegrationTest.class
 Junit\chainOfResponsability\ChainHandlerTest.class
 Integration\observer\ObserverAndChainIntegrationTest.class
 Junit\factoryMethod\FactoryMethodTest.class

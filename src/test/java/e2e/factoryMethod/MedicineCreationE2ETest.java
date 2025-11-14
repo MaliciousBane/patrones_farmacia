@@ -8,13 +8,18 @@ import patrones_farmacia.factoryMethod.model.Medicine;
 class MedicineCreationE2ETest {
 
     @Test
-    void testCreateDifferentTypesOfMedicine() {
+    void shouldCreateGenericAndBrandMedicinesWithDifferentTypes() {
         FCreator creator = new FCreator();
-        Medicine generic = creator.createMedicine(FCreator.Type.GENERIC, "Paracetamol", "GenFarma", 3000);
-        Medicine brand = creator.createMedicine(FCreator.Type.BRAND, "Dolex Forte", "GSK", 6000);
+        
+        Medicine generic = creator.createMedicine(FCreator.Type.GENERIC, 
+                                                   "Paracetamol", "GenFarma", 3000);
+        Medicine brand = creator.createMedicine(FCreator.Type.BRAND, 
+                                                 "Dolex Forte", "GSK", 6000);
 
-        assertNotNull(generic);
-        assertNotNull(brand);
-        assertNotEquals(generic.getType(), brand.getType());
+        assertNotNull(generic, "El medicamento genérico debe ser creado");
+        assertNotNull(brand, "El medicamento de marca debe ser creado");
+        
+        assertNotEquals(generic.getType(), brand.getType(), 
+                        "Los medicamentos genéricos y de marca deben tener tipos diferentes");
     }
 }
